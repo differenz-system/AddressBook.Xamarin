@@ -5,7 +5,7 @@
         <ContentView Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding UserList, Converter={local:NoDataMessageVisibilityConverter}}">
             <Label Text="No Data" FontSize="12" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
         </ContentView>
-        <local:ListView x:Name="MyList" IsVisible="{Binding UserList, Converter={local:ListVisibilityHelper}}" Scale="0" ItemClickCommand="{Binding SelectItem}" ItemsSource="{Binding UserList, Mode=TwoWay}" HasUnevenRows="true" RowHeight="110">
+        <local:ListView BackgroundColor="Transparent" x:Name="MyList" IsVisible="{Binding UserList, Converter={local:ListVisibilityHelper}}" Scale="0" ItemClickCommand="{Binding SelectItem}" ItemsSource="{Binding UserList, Mode=TwoWay}" HasUnevenRows="true" RowHeight="110">
             <local:ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
