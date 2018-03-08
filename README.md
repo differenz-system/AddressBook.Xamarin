@@ -9,10 +9,10 @@ The app does the following:
 
 ## Screenshots
 ### Android
-<img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/Android/detail.png" width="200"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/Android/list.png" width="200"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/Android/login.png" width="200">
+<img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/Android/login.png" width="280"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/Android/list.png" width="280"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/Android/detail.png" width="280">  
 
 ### iOS
-<img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/detail.png" width="200"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/list.png" width="200"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/login.png" width="200">
+<img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/login.png" width="280"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/list.png" width="280"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/detail.png" width="280"> 
 
 ## Getting Started
 The application in this repository should be automatically importable, compilable, and runnable. You can download code & step up using respected standard development tools available. Run & explore more. 
