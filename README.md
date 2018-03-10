@@ -1,6 +1,6 @@
 # AddressBook.Xamarin
 ## Overview
-This repository demonstrates a contact list application that shows design & coding practices followed by **[Differenz System](http://www.differenzsystem.com/)**. The Application is currently optimized for mobile phones only.
+This repository demonstrates a contact list application that shows design & coding practices followed by **[Differenz System](http://www.differenzsystem.com/)**. 
 
 The app does the following:
 1. **Login:** User can login via facebook or email/password. 
