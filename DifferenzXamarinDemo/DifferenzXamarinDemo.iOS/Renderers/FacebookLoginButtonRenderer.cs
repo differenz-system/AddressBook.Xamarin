@@ -1,6 +1,7 @@
 ﻿using System;
 using DifferenzXamarinDemo.CustomControls;
 using DifferenzXamarinDemo.iOS.Renderers;
+using DifferenzXamarinDemo.Services;
 using UIKit;
 using Xamarin.Auth;
 using Xamarin.Forms;
@@ -24,7 +25,7 @@ namespace DifferenzXamarinDemo.iOS.Renderers
 
 				//Executes facebook authentication process
 				btn.TouchUpInside += delegate {
-					if (string.IsNullOrEmpty(App.Token))
+					if (string.IsNullOrEmpty(SessionService.Token))
 					{
 						var rc = UIApplication.SharedApplication.KeyWindow.RootViewController;
 
@@ -38,7 +39,7 @@ namespace DifferenzXamarinDemo.iOS.Renderers
 							// We presented the UI, so it's up to us to dimiss it on iOS.
 							if (eventArgs.IsAuthenticated)
 							{
-								App.SaveFBAccount(eventArgs.Account);
+								SessionService.SaveFBAccount(eventArgs.Account);
 							}
 							else
 							{
@@ -51,7 +52,7 @@ namespace DifferenzXamarinDemo.iOS.Renderers
 					}
 					else
 					{
-						App.GetFacebookLoginDetail();
+						SessionService.GetFacebookLoginDetail();
 					}
 				};
 			}

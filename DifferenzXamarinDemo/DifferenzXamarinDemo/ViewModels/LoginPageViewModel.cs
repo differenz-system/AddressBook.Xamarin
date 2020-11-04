@@ -5,6 +5,7 @@ using Acr.UserDialogs;
 using DifferenzXamarinDemo.Helpers;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
+using Prism.Commands;
 using Prism.Navigation;
 using Xamarin.Forms;
 
@@ -12,38 +13,39 @@ namespace DifferenzXamarinDemo.ViewModels
 {
     public class LoginPageViewModel : ViewModelBase
     {
+        #region Constructor
         public LoginPageViewModel(INavigationService navigationService, FacadeService facadeService) : base(navigationService, facadeService)
         {
         }
+        #endregion
 
+        #region Private Properties
         private string _password;
+        private string _email;
+        #endregion
+
+        #region Public Properties
         public string Password
         {
             get { return _password; }
             set { SetProperty(ref _password, value); }
         }
-
-        private string _email;
         public string Email
         {
             get { return _email; }
             set { SetProperty(ref _email, value); }
         }
+        #endregion
 
-        public ICommand LoginCommand
-        {
-            get
-            {
-                return new Command(() => {
-                    Login();
-                });
-            }
-        }
+        #region Commands
+        public DelegateCommand LoginCommand { get { return new DelegateCommand(() => Login()); } }
+        #endregion
 
+        #region Private Methods
         /// <summary>
         /// Performs user login.
         /// </summary>
-		private async void Login()
+        private async void Login()
         {
             if (string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password))
             {
@@ -78,7 +80,7 @@ namespace DifferenzXamarinDemo.ViewModels
                 {
                     using (UserDialogs.Instance.Loading(Constants.TITLE_LOADING))
                     {
-                        App.AutoLogin();
+                        SessionService.AutoLogin();
                     }
                 }
             }
@@ -87,5 +89,11 @@ namespace DifferenzXamarinDemo.ViewModels
                 await App.Current.MainPage.DisplayAlert(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, Constants.TEXT_OK);
             }
         }
+        #endregion
+
+        #region Public methods
+
+        #endregion
+
     }
 }

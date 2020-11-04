@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DifferenzXamarinDemo.Services;
 using DifferenzXamarinDemo.ViewModels;
 using Xamarin.Forms;
 
@@ -9,7 +10,7 @@ namespace DifferenzXamarinDemo.Views
     {
         public MyListPage()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
 
         protected async override void OnAppearing()
@@ -19,8 +20,8 @@ namespace DifferenzXamarinDemo.Views
 
             var vm = this.BindingContext as MyListPageViewModel;
             var itemsSource = vm.UserList;
-            vm.UserList = App.Database.GetAll();
-            MyList.ItemsSource = vm.UserList;
+            vm.UserList = DatabaseService.GetAll();
+            //MyList.ItemsSource = vm.UserList;
         }
     }
 }

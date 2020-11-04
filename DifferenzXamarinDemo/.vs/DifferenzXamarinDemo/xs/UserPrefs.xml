@@ -1,14 +1,20 @@
-﻿<Properties StartupConfiguration="{8F4B3DE7-3D72-4845-85B2-C135F2C9199F}|Default">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{95DE92FB-ADA0-40E6-B9F9-BD6006DA064D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/ViewModels/MyListPageViewModel.cs">
+    <Files>
+      <File FileName="DifferenzXamarinDemo/ViewModels/MyListPageViewModel.cs" Line="74" Column="19" />
+      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml" Line="23" Column="34" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DifferenzXamarinDemo" expanded="True">
             <Node name="DifferenzXamarinDemo" expanded="True">
               <Node name="ViewModels" expanded="True">
-                <Node name="LoginPageViewModel.cs" selected="True" />
+                <Node name="MyListPageViewModel.cs" selected="True" />
               </Node>
+              <Node name="Views" expanded="True" />
             </Node>
+            <Node name="DifferenzXamarinDemo.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -24,4 +30,5 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.UITests PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

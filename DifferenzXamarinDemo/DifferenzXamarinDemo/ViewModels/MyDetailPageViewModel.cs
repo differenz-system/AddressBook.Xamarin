@@ -5,6 +5,7 @@ using Acr.UserDialogs;
 using DifferenzXamarinDemo.Helpers;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
+using Prism.Commands;
 using Prism.Navigation;
 using Xamarin.Forms;
 
@@ -12,11 +13,18 @@ namespace DifferenzXamarinDemo.ViewModels
 {
     public class MyDetailPageViewModel : ViewModelBase
     {
+        #region Constructor
         public MyDetailPageViewModel(INavigationService navigationService, FacadeService facadeService) : base(navigationService, facadeService)
         {
         }
+        #endregion
 
+        #region Private Properties
         private int _ID { get; set; } = -1;
+        #endregion
+
+        #region Public Properties
+
         public int ID
         {
             get
@@ -41,27 +49,34 @@ namespace DifferenzXamarinDemo.ViewModels
         }
 
         public string Name { get; set; }
-
         public string EmailAddress { get; set; }
-
         public string ContactNumber { get; set; }
-
         public bool Active { get; set; }
-
         public string SaveButtonText { get; set; } = Constants.TEXT_UPDATE;
-
         public string DeleteButtonText { get; set; } = Constants.TEXT_DELETE;
 
-        public ICommand SaveCommand
-        {
-            get
-            {
-                return new Command(() => {
-                    Save();
+        #endregion
+
+        #region Commands
+
+        public DelegateCommand SaveCommand { get { return new DelegateCommand(() => Save()); } }
+        public DelegateCommand DeleteCommand {
+            get {
+                return new DelegateCommand(() => {
+                    if (ID > 0) {
+                        Delete();
+                    } else {
+                        Cancel();
+                    }
                 });
             }
         }
+        public DelegateCommand BackCommand { get { return new DelegateCommand(() => Cancel()); } }
+        
 
+        #endregion
+
+        #region Private Methods
         /// <summary>
         /// Saves user details to address book.
         /// </summary>
@@ -89,7 +104,7 @@ namespace DifferenzXamarinDemo.ViewModels
                     userData.EmailAddress = EmailAddress;
                     userData.ContactNumber = ContactNumber;
                     userData.Active = Active;
-                    App.Database.SaveItem(userData);
+                    DatabaseService.SaveItem(userData);
                 };
                 await App.Current.MainPage.DisplayAlert(Constants.TITLE_SUCCESS, Constants.MESSAGE_SUCCESS_DATA_UPDATED, Constants.TEXT_OK);
                 await _navigationService.GoBackAsync();
@@ -97,29 +112,6 @@ namespace DifferenzXamarinDemo.ViewModels
             else
             {
                 await App.Current.MainPage.DisplayAlert(Constants.TITLE_VALIDATION_ERROR, Constants.MESSAGE_ERROR_INSERT_ALL_DATA, Constants.TEXT_OK);
-            }
-        }
-
-        public ICommand DeleteCommand
-        {
-            get
-            {
-                return new Command(() => {
-                    if (ID > 0)
-                        Delete();
-                    else
-                        Cancel();
-                });
-            }
-        }
-
-        public ICommand BackCommand
-        {
-            get
-            {
-                return new Command(() => {
-                    Cancel();
-                });
             }
         }
 
@@ -132,7 +124,7 @@ namespace DifferenzXamarinDemo.ViewModels
             {
                 if (ID != 0)
                 {
-                    App.Database.DeleteItem(ID);
+                    DatabaseService.DeleteItem(ID);
                     await App.Current.MainPage.Navigation.PopAsync();
                 }
             };
@@ -142,15 +134,11 @@ namespace DifferenzXamarinDemo.ViewModels
         {
             await App.Current.MainPage.Navigation.PopAsync();
         }
+        #endregion
 
-        public ICommand LogoutCommand
-        {
-            get
-            {
-                return new Command(() => {
-                    App.Logout();
-                });
-            }
-        }
+        #region Public methods
+
+        #endregion
+        
     }
 }

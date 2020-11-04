@@ -1,30 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.MyListPage" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True"  Title="Address Book" BackgroundColor="#eeeeee">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" x:Class="DifferenzXamarinDemo.Views.MyListPage" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" Title="Address Book" BackgroundColor="#eeeeee">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0">
             <subviews:HeaderView LeftText="Logout" LeftCommand="{Binding LogoutCommand}" HeaderText="Address Book" RightText="Add" RightCommand="{Binding AddCommand}"/>
-            <ContentView Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding UserList, Converter={converters:NoDataMessageVisibilityConverter}}">
-                <Label Text="No Data" FontSize="12" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <ContentView Padding="{Static Services:LayoutService.MarginPadding20}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding UserList, Converter={StaticResource noDataMessageVisibilityConverter}}">
+                <Label Text="No Data" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{StaticResource Size14BlackLabelStyle}"/>
             </ContentView>
-            <customControls:ListView BackgroundColor="Transparent" x:Name="MyList" IsVisible="{Binding UserList, Converter={converters:ListVisibilityConverter}}" Scale="0" ItemClickCommand="{Binding SelectItem}" ItemsSource="{Binding UserList, Mode=TwoWay}" HasUnevenRows="true" RowHeight="110">
-                <customControls:ListView.ItemTemplate>
+            <ListView BackgroundColor="Transparent" x:Name="MyList" IsVisible="{Binding UserList, Converter={StaticResource listVisibilityConverter}}" Scale="0" ItemsSource="{Binding UserList, Mode=TwoWay}" HasUnevenRows="true" RowHeight="110" SeparatorVisibility="None" Margin="{Static Services:LayoutService.MarginPadding10}">
+                <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <ContentView Padding="10">
-                                    <Frame BackgroundColor="White" Padding="10" OutlineColor="Silver" HasShadow="false">
-                                        <StackLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="5">
-                                            <Label Text="{Binding Name}" FontSize="18" TextColor="Black"/>
-                                            <Label Text="{Binding EmailAddress}" FontSize="12" TextColor="Black" />
-                                            <Label Text="{Binding ContactNumber}" FontSize="12" TextColor="Black"/>
+                                <ContentView Padding="{Static Services:LayoutService.MarginPadding00_05_00_05}">
+                                    <Frame BackgroundColor="White" Padding="{Static Services:LayoutService.MarginPadding10}" OutlineColor="Silver" HasShadow="false">
+                                        <StackLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{Static Services:LayoutService.Spacing05}">
+                                            <Label Text="{Binding Name}" Style="{StaticResource Size20BlackLabelStyle}" />
+                                            <Label Text="{Binding EmailAddress}" Style="{StaticResource Size14BlackLabelStyle}" />
+                                            <Label Text="{Binding ContactNumber}" Style="{StaticResource Size14BlackLabelStyle}"/>
                                         </StackLayout>
                                     </Frame>
+                                    <ContentView.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference MyList}, Path=BindingContext.SelectItemCommand}" CommandParameter="{Binding .}" />
+                                    </ContentView.GestureRecognizers>
                                 </ContentView>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
-                </customControls:ListView.ItemTemplate>
-            </customControls:ListView>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

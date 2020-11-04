@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Prism.Commands;
 using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Views.SubViews
@@ -15,7 +16,7 @@ namespace DifferenzXamarinDemo.Views.SubViews
             {
                 if (RightCommand != null)
                 {
-                    RightCommand.Execute(this);
+                    RightCommand.Execute();
                 }
             };
             RightButtontext.GestureRecognizers.Add(RightClickTGR);
@@ -25,24 +26,24 @@ namespace DifferenzXamarinDemo.Views.SubViews
             {
                 if (LeftCommand != null)
                 {
-                    LeftCommand.Execute(this);
+                    LeftCommand.Execute();
                 }
             };
             LeftButtontext.GestureRecognizers.Add(LeftClickTGR);
         }
 
-        public static BindableProperty RightCommandProperty = BindableProperty.Create(nameof(RightCommand), typeof(Command), typeof(HeaderView), default(Command), BindingMode.TwoWay, propertyChanged: OnRightCommandChanged);
+        public static BindableProperty RightCommandProperty = BindableProperty.Create(nameof(RightCommand), typeof(DelegateCommand), typeof(HeaderView), default(DelegateCommand), BindingMode.TwoWay, propertyChanged: OnRightCommandChanged);
         private static void OnRightCommandChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
             var picker = bindable as HeaderView;
-            picker.RightCommand = (Xamarin.Forms.Command)newvalue;
+            picker.RightCommand = (DelegateCommand)newvalue;
         }
 
-        public Command RightCommand
+        public DelegateCommand RightCommand
         {
             get
             {
-                return (Command)this.GetValue(RightCommandProperty);
+                return (DelegateCommand)this.GetValue(RightCommandProperty);
             }
             set
             {
@@ -51,18 +52,18 @@ namespace DifferenzXamarinDemo.Views.SubViews
         }
 
         public static BindableProperty LeftCommandProperty =
-            BindableProperty.Create(nameof(LeftCommand), typeof(Command), typeof(HeaderView), default(Command), BindingMode.TwoWay, propertyChanged: OnLeftCommandChanged);
+            BindableProperty.Create(nameof(LeftCommand), typeof(DelegateCommand), typeof(HeaderView), default(DelegateCommand), BindingMode.TwoWay, propertyChanged: OnLeftCommandChanged);
         private static void OnLeftCommandChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
             var picker = bindable as HeaderView;
-            picker.LeftCommand = (Xamarin.Forms.Command)newvalue;
+            picker.LeftCommand = (DelegateCommand)newvalue;
         }
 
-        public Command LeftCommand
+        public DelegateCommand LeftCommand
         {
             get
             {
-                return (Command)this.GetValue(LeftCommandProperty);
+                return (DelegateCommand)this.GetValue(LeftCommandProperty);
             }
             set
             {

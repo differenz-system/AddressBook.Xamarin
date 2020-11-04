@@ -2,6 +2,7 @@
 using Android.App;
 using DifferenzXamarinDemo.CustomControls;
 using DifferenzXamarinDemo.Droid.Renderers;
+using DifferenzXamarinDemo.Services;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -24,7 +25,7 @@ namespace DifferenzXamarinDemo.Droid.Renderers
 
 				//Executes facebook authentication process
 				btn.Click += (object senderobj, EventArgs evn) => {
-					if (string.IsNullOrEmpty(App.Token))
+					if (string.IsNullOrEmpty(SessionService.Token))
 					{
 						var activity = Context as Activity;
 
@@ -39,7 +40,7 @@ namespace DifferenzXamarinDemo.Droid.Renderers
 							if (eventArgs.IsAuthenticated)
 							{
 
-								App.SaveFBAccount(eventArgs.Account);
+								SessionService.SaveFBAccount(eventArgs.Account);
 							}
 							else
 							{
@@ -50,7 +51,7 @@ namespace DifferenzXamarinDemo.Droid.Renderers
 					}
 					else
 					{
-						App.GetFacebookLoginDetail();
+						SessionService.GetFacebookLoginDetail();
 					}
 				};
 			}

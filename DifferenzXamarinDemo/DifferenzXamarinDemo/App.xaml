@@ -1,6 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.App" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms">
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.App" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:CustomControls="clr-namespace:DifferenzXamarinDemo.CustomControls">
     <Application.Resources>
+
+        <!-- Colors -->
+        <Color x:Key="BrandColor">#008080</Color>
+
+        <Color x:Key="BlackColor">#000000</Color>
+        <Color x:Key="WhiteColor">#FFFFFF</Color>
+        <Color x:Key="GrayColor">#ACACAC</Color>
+
+        <!-- Converters -->
+        <converters:NoDataMessageVisibilityConverter x:Key="noDataMessageVisibilityConverter" />
+        <converters:ListVisibilityConverter x:Key="listVisibilityConverter" />
+
+        <!--Base Style-->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize12}" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource BrandColor}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="TextTransform" Value="None" />
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
+            <Setter Property="BorderWidth" Value="1" />
+            <Setter Property="BorderColor" Value="{StaticResource BrandColor}" />
+            <Setter Property="BorderRadius" Value="5" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style TargetType="CustomControls:FacebookLoginButton" >
+            <Setter Property="BackgroundColor" Value="{StaticResource BrandColor}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="TextTransform" Value="None" />
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
+            <Setter Property="BorderWidth" Value="1" />
+            <Setter Property="BorderColor" Value="{StaticResource BrandColor}" />
+            <Setter Property="BorderRadius" Value="5" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource GrayColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+
+        <!--Label Styles-->
+        <Style x:Key="Size12BlackLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize12}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+        </Style>
+
+        <Style x:Key="Size14BlackLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize14}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+        </Style>
+
+        <Style x:Key="Size20BlackLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize20}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+        </Style>
+        
     </Application.Resources>
 </prism:PrismApplication>
 

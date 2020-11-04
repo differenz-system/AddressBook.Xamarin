@@ -1,39 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Input;
+﻿using System.Collections.Generic;
 using Acr.UserDialogs;
 using DifferenzXamarinDemo.Helpers;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
 using DifferenzXamarinDemo.Views;
+using Prism.Commands;
 using Prism.Navigation;
-using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.ViewModels
 {
     public class MyListPageViewModel : ViewModelBase
     {
+        #region Constructor
         public MyListPageViewModel(INavigationService navigationService, FacadeService facadeService) : base(navigationService, facadeService)
         {
         }
+        #endregion
 
+        #region Private Properties
         private List<UserData> _userList;
+        #endregion
+
+        #region Public Properties
         public List<UserData> UserList
         {
             get { return _userList; }
             set { SetProperty(ref _userList, value); }
         }
+        #endregion
 
-        public Command<UserData> SelectItem
-        {
-            get
-            {
-                return new Command<UserData>(s =>
-                {
-                    ViewAddress(s);
-                });
-            }
-        }
+        #region Commands
+
+        public DelegateCommand<UserData> SelectItemCommand { get { return new DelegateCommand<UserData>((obj) => ViewAddress(obj)); } }
+        public DelegateCommand AddCommand { get { return new DelegateCommand(Add); } }
+
+        #endregion
+
+        #region Private Methods
 
         /// <summary>
         /// Views user data from address book.
@@ -56,29 +59,6 @@ namespace DifferenzXamarinDemo.ViewModels
             await App.Current.MainPage.Navigation.PushAsync(myDetailPage);
         }
 
-        public ICommand LogoutCommand
-        {
-            get
-            {
-                return new Command(() =>
-                {
-                    App.Logout();
-                });
-            }
-        }
-
-
-        public ICommand AddCommand
-        {
-            get
-            {
-                return new Command(() =>
-                {
-                    Add();
-                });
-            }
-        }
-
         /// <summary>
         /// Navigates to MyDetailsPage to add new user data in address book.
         /// </summary>
@@ -91,5 +71,11 @@ namespace DifferenzXamarinDemo.ViewModels
             myDetailPage.BindingContext = myDetailViewModel;
             await App.Current.MainPage.Navigation.PushAsync(myDetailPage);
         }
+        #endregion
+
+        #region Public methods
+
+        #endregion
+
     }
 }
