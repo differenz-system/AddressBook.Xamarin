@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
-using DifferenzXamarinDemo.Helpers;
-using DifferenzXamarinDemo.Models;
+﻿using DifferenzXamarinDemo.Helpers;
 using DifferenzXamarinDemo.Services;
-using DifferenzXamarinDemo.ViewModels;
 using DifferenzXamarinDemo.Views;
 using Prism;
 using Prism.Ioc;
 using Prism.Navigation;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace DifferenzXamarinDemo
 {
@@ -32,7 +25,7 @@ namespace DifferenzXamarinDemo
             AppNavigationService = NavigationService;
             //LayoutService.Init();
             //LanguageService.Init();
-            if (Settings.IsLoggedIn)
+            if (SettingsService.IsLoggedIn)
             {
                 SessionService.AutoLogin();
             }

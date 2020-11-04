@@ -1,10 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.App" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:CustomControls="clr-namespace:DifferenzXamarinDemo.CustomControls">
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.App" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:CustomControls="clr-namespace:DifferenzXamarinDemo.CustomControls" xmlns:SubViews="clr-namespace:DifferenzXamarinDemo.Views.SubViews">
     <Application.Resources>
+
+        <!-- Templates-->
+        <ControlTemplate x:Key="HeaderTemplate">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <SubViews:HeaderView Grid.Row="0" BindingContext="{TemplateBinding BindingContext.CurrentHeader}" />
+                <ContentPresenter Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            </Grid>
+        </ControlTemplate>
 
         <!-- Colors -->
         <Color x:Key="BrandColor">#008080</Color>
-
+        <Color x:Key="SmokeWhiteColor">#eeeeee</Color>
         <Color x:Key="BlackColor">#000000</Color>
         <Color x:Key="WhiteColor">#FFFFFF</Color>
         <Color x:Key="GrayColor">#ACACAC</Color>
@@ -27,7 +39,7 @@
             <Setter Property="BorderWidth" Value="1" />
             <Setter Property="BorderColor" Value="{StaticResource BrandColor}" />
             <Setter Property="BorderRadius" Value="5" />
-            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="HeightRequest" Value="{Static Services:LayoutService.HeightWidth40}" />
         </Style>
         <Style TargetType="CustomControls:FacebookLoginButton" >
             <Setter Property="BackgroundColor" Value="{StaticResource BrandColor}" />
@@ -60,11 +72,24 @@
             <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
         </Style>
 
+        <Style x:Key="Size15WhiteLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize15}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="LineBreakMode" Value="TailTruncation" />
+        </Style>
+
+        <Style x:Key="Size15WhiteBoldLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize15}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="LineBreakMode" Value="TailTruncation" />
+        </Style>
+
         <Style x:Key="Size20BlackLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize20}" />
             <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
         </Style>
-        
+
     </Application.Resources>
 </prism:PrismApplication>
 

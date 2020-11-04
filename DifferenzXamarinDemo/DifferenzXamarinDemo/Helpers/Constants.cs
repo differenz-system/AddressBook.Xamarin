@@ -35,10 +35,28 @@ namespace DifferenzXamarinDemo.Helpers
         public static readonly string TEXT_UPDATE = "Update";
         public static readonly string TEXT_DELETE = "Delete";
         public static readonly string TEXT_SAVE = "Save";
+        public static readonly string TEXT_ADD = "Add";
+        public static readonly string TEXT_LOGIN = "Login";
+        public static readonly string TEXT_DETAIL = "Detail";
+        public static readonly string Text_ADDRESS_BOOK = "Address Book";
 
-        public static readonly string EMAIL_REGEX = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-            @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
+        
+        
 
-        public static readonly string PHONE_NO_REGEX = @"\d{10}";
+        public static readonly string TEXT_EMAIL = "Email";
+        public static readonly string TEXT_PASSWORD = "Password";
+        public static readonly string TEXT_LOG_IN = "Log In";
+        public static readonly string TEXT_OR = "Or";
+        public static readonly string TEXT_LOGIN_WITH_FACEBOOK = "Login with Facebook";
+        public static readonly string TEXT_NAME = "Name";
+        public static readonly string TEXT_CONTACT_NUMBER = "Contact Number";
+        public static readonly string TEXT_ACTIVE = "Active";
+        public static readonly string TEXT_NO_DATA = "No Data";
+
+        public static readonly string PLACEHOLDER_PASSWORD = "Password goes here";
+        public static readonly string PLACEHOLDER_EMAIL = "Email goes here";
+        public static readonly string PLACEHOLDER_CONTACT_NO = "Contact number goes here";
+        public static readonly string PLACEHOLDER_USERNAME = "User name goes here";
+
     }
 }

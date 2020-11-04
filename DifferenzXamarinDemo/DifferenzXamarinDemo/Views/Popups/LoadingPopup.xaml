@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.Views.Popups.LoadingPopup" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" CloseWhenBackgroundIsClicked="false" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary />
+    </pages:PopupPage.Resources>
+    <pages:PopupPage.HasSystemPadding>
+        <OnPlatform x:TypeArguments="x:Boolean">
+            <OnPlatform.iOS>false</OnPlatform.iOS>
+            <OnPlatform.Android>true</OnPlatform.Android>
+        </OnPlatform>
+    </pages:PopupPage.HasSystemPadding>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation PositionIn="Center" PositionOut="Center" ScaleIn="1.2" ScaleOut="0.8" DurationIn="400" DurationOut="300" EasingIn="SinOut" EasingOut="SinIn" HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+    <pages:PopupPage.Content>
+        <StackLayout AutomationId="LoadingPopup" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="{x:Static Services:LayoutService.Spacing20}" Padding="{x:Static Services:LayoutService.MarginPadding30}">
+            <ActivityIndicator VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Color="{StaticResource WhiteColor}" IsRunning="true" IsVisible="true">
+            </ActivityIndicator>
+        </StackLayout>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

@@ -25,6 +25,8 @@ namespace DifferenzXamarinDemo.iOS
 #if ENABLE_TEST_CLOUD
             Xamarin.Calabash.Start();
 #endif
+
+            Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

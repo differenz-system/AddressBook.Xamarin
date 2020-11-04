@@ -101,6 +101,7 @@ namespace DifferenzXamarinDemo.Services
             MarginPadding15 = MarginPaddingConvertAsPerDevice(15, 15, 15, 15);
             MarginPadding20 = MarginPaddingConvertAsPerDevice(20, 20, 20, 20);
             MarginPadding30 = MarginPaddingConvertAsPerDevice(30, 30, 30, 30);
+            MarginPadding50 = MarginPaddingConvertAsPerDevice(30, 30, 30, 30);
 
             MarginPadding00_05_00_00 = MarginPaddingConvertAsPerDevice(00, 05, 00, 00);
             MarginPadding05_00_05_00 = MarginPaddingConvertAsPerDevice(05, 00, 05, 00);
@@ -726,6 +727,11 @@ namespace DifferenzXamarinDemo.Services
         /// Gets or sets the MarginPadding30.
         /// </summary>
         public static Thickness MarginPadding30 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the MarginPadding50.
+        /// </summary>
+        public static Thickness MarginPadding50 { get; set; }
 
         /// <summary>
         /// Gets or sets the MarginPadding00_05_00_00.

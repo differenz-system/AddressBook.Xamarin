@@ -7,6 +7,14 @@ using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Services
 {
+    /// <summary>
+    /// ISQLite - Contains declarations for SQLite Operations
+    /// </summary>
+	public interface ISQLite
+    {
+        SQLiteConnection GetConnection();
+    }
+
     public class DatabaseService
     {
         public DatabaseService()

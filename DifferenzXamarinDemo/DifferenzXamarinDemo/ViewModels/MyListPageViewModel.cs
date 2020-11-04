@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Acr.UserDialogs;
+﻿using System;
+using System.Collections.Generic;
 using DifferenzXamarinDemo.Helpers;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
@@ -14,6 +14,13 @@ namespace DifferenzXamarinDemo.ViewModels
         #region Constructor
         public MyListPageViewModel(INavigationService navigationService, FacadeService facadeService) : base(navigationService, facadeService)
         {
+            var header = new HeaderModel();
+            header.HeaderText = Constants.Text_ADDRESS_BOOK;
+            header.LeftText = Constants.TEXT_LOGOUT;
+            header.RightText = Constants.TEXT_ADD;
+            header.LeftCommand = LogoutCommand;
+            header.RightCommand = AddCommand;
+            CurrentHeader = header;
         }
         #endregion
 
@@ -41,22 +48,12 @@ namespace DifferenzXamarinDemo.ViewModels
         /// <summary>
         /// Views user data from address book.
         /// </summary>
-        /// <param name="s">S.</param>
-        async void ViewAddress(UserData s)
+        /// <param name="userData">UserData.</param>
+        async void ViewAddress(UserData userData)
         {
-            var myDetailPage = new MyDetailPage();
-            var myDetailViewModel = new MyDetailPageViewModel(_navigationService, _facadeService);
-            using (UserDialogs.Instance.Loading(Constants.TITLE_LOADING))
-            {
-                myDetailViewModel.Name = s.Name;
-                myDetailViewModel.ID = s.ID;
-                myDetailViewModel.Active = s.Active;
-                myDetailViewModel.ContactNumber = s.ContactNumber;
-                myDetailViewModel.EmailAddress = s.EmailAddress;
-            };
-
-            myDetailPage.BindingContext = myDetailViewModel;
-            await App.Current.MainPage.Navigation.PushAsync(myDetailPage);
+            var param = new NavigationParameters();
+            param.Add("userdata", userData);
+            await _navigationService.NavigateAsync($"{nameof(MyDetailPage)}", param);
         }
 
         /// <summary>
@@ -64,17 +61,24 @@ namespace DifferenzXamarinDemo.ViewModels
         /// </summary>
         async void Add()
         {
-            var myDetailPage = new MyDetailPage();
-            var myDetailViewModel = new MyDetailPageViewModel(_navigationService, _facadeService);
-            myDetailViewModel.ID = 0;
-            myDetailViewModel.Active = false;
-            myDetailPage.BindingContext = myDetailViewModel;
-            await App.Current.MainPage.Navigation.PushAsync(myDetailPage);
+            await _navigationService.NavigateAsync($"{nameof(MyDetailPage)}");
         }
         #endregion
 
         #region Public methods
 
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
+            try
+            {
+                UserList = DatabaseService.GetAll();
+            }
+            catch (Exception ex)
+            {
+                TelemetryService.Instance.Record(ex);
+            }
+        }
         #endregion
 
     }

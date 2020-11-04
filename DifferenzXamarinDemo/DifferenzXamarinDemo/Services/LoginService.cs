@@ -30,7 +30,7 @@ namespace DifferenzXamarinDemo.Services
 				LoginObject Loginobj = new LoginObject();
 				Loginobj.LoginData = LoginData1;
 
-				client.BaseAddress = new Uri(ServiceHelper.ServiceUrl);
+				client.BaseAddress = new Uri(APIService.ServiceUrl);
 				client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
 				var jData = JsonConvert.SerializeObject(Loginobj);

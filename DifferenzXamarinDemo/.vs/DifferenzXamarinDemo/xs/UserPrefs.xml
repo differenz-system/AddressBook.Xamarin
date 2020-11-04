@@ -1,32 +1,51 @@
 ﻿<Properties StartupConfiguration="{95DE92FB-ADA0-40E6-B9F9-BD6006DA064D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/ViewModels/MyListPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/App.xaml">
     <Files>
-      <File FileName="DifferenzXamarinDemo/ViewModels/MyListPageViewModel.cs" Line="74" Column="19" />
-      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml" Line="23" Column="34" />
+      <File FileName="DifferenzXamarinDemo/Helpers/Constants.cs" Line="44" Column="9" />
+      <File FileName="DifferenzXamarinDemo/Services/DatabaseService.cs" Line="35" Column="14" />
+      <File FileName="DifferenzXamarinDemo/Services/SessionService.cs" />
+      <File FileName="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" />
+      <File FileName="DifferenzXamarinDemo/ViewModels/MyDetailPageViewModel.cs" />
+      <File FileName="DifferenzXamarinDemo.iOS/Info.plist" />
+      <File FileName="DifferenzXamarinDemo.iOS/Helpers/SQLite_iOS.cs" Line="12" Column="19" />
+      <File FileName="DifferenzXamarinDemo.Android/Helpers/SQLite_Android.cs" Line="10" Column="45" />
+      <File FileName="DifferenzXamarinDemo.Android/Resources/values/colors.xml" Line="5" Column="43" />
+      <File FileName="DifferenzXamarinDemo.Android/Resources/values/styles.xml" Line="21" Column="69" />
+      <File FileName="DifferenzXamarinDemo/Views/LoginPage.xaml" Line="15" Column="42" />
+      <File FileName="DifferenzXamarinDemo/App.xaml" Line="30" Column="41" />
+      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml" Line="2" Column="876" />
+      <File FileName="DifferenzXamarinDemo/Views/MyDetailPage.xaml" Line="2" Column="880" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DifferenzXamarinDemo" expanded="True">
             <Node name="DifferenzXamarinDemo" expanded="True">
-              <Node name="ViewModels" expanded="True">
-                <Node name="MyListPageViewModel.cs" selected="True" />
-              </Node>
               <Node name="Views" expanded="True" />
+              <Node name="App.xaml" selected="True" />
             </Node>
-            <Node name="DifferenzXamarinDemo.iOS" expanded="True" />
+            <Node name="DifferenzXamarinDemo.Android" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="values" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="DifferenzXamarinDemo.iOS" expanded="True">
+              <Node name="Helpers" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7C48C689-2E18-49F9-B48A-EE532D1F3514" />
+  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.07578E5B-630C-4050-AC08-9CDEDE117799" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.Android PreferredExecutionTarget="Android.pixel_2_q_10_0_-_api_29" />
+  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
+      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressBook/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="12" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

@@ -17,11 +17,6 @@ namespace DifferenzXamarinDemo.Views
         {
             base.OnAppearing();
             await MyList.ScaleTo(1, 250, Easing.Linear);
-
-            var vm = this.BindingContext as MyListPageViewModel;
-            var itemsSource = vm.UserList;
-            vm.UserList = DatabaseService.GetAll();
-            //MyList.ItemsSource = vm.UserList;
         }
     }
 }

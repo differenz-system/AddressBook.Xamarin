@@ -1,16 +1,15 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using DifferenzXamarinDemo.Droid.Helpers;
-using DifferenzXamarinDemo.Helpers;
+using DifferenzXamarinDemo.Services;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SQLite_Android))]
 namespace DifferenzXamarinDemo.Droid.Helpers
 {
-	/// <summary>
-	/// SQLite_Android - implements ISQLite interface
-	/// </summary>
-	public class SQLite_Android : ISQLite
+    /// <summary>
+    /// SQLite_Android - implements ISQLite interface
+    /// </summary>
+    public class SQLite_Android : ISQLite
 	{
 		public SQLite_Android() { }
 		public SQLite.SQLiteConnection GetConnection()
