@@ -1,7 +1,5 @@
-﻿using System;
-using Rg.Plugins.Popup.Contracts;
+﻿using Rg.Plugins.Popup.Contracts;
 using Rg.Plugins.Popup.Services;
-using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Services
 {

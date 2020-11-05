@@ -10,10 +10,10 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(FacebookLoginButton), typeof(FacebookLoginButtonRenderer))]
 namespace DifferenzXamarinDemo.iOS.Renderers
 {
-	/// <summary>
-	/// FacebookLoginButtonRenderer - Custom renderer of type FacebookLoginButton
-	/// </summary>
-	public class FacebookLoginButtonRenderer : ButtonRenderer
+    /// <summary>
+    /// FacebookLoginButtonRenderer - Custom renderer of type FacebookLoginButton
+    /// </summary>
+    public class FacebookLoginButtonRenderer : ButtonRenderer
 	{
 		protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
 		{

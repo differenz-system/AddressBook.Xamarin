@@ -1,5 +1,4 @@
-﻿using DifferenzXamarinDemo.Helpers;
-using DifferenzXamarinDemo.Services;
+﻿using DifferenzXamarinDemo.Services;
 using DifferenzXamarinDemo.Views;
 using Prism;
 using Prism.Ioc;
@@ -23,8 +22,7 @@ namespace DifferenzXamarinDemo
             InitializeComponent();
 
             AppNavigationService = NavigationService;
-            //LayoutService.Init();
-            //LanguageService.Init();
+            LanguageService.Init();
             if (SettingsService.IsLoggedIn)
             {
                 SessionService.AutoLogin();

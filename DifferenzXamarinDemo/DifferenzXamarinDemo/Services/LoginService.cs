@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using DifferenzXamarinDemo.Helpers;
+using DifferenzXamarinDemo.LanguageResources;
 using DifferenzXamarinDemo.Models;
 using Newtonsoft.Json;
 
@@ -47,7 +47,7 @@ namespace DifferenzXamarinDemo.Services
 			catch (Exception ex)
 			{
 				Debug.WriteLine(ex.Message);
-				UDI.Errors.Add(Constants.MESSAGE_ERROR_SOMETHING_WENT_WRONG_WITH_USER_LOGIN);
+				UDI.Errors.Add(AppResources.MESSAGE_ERROR_SOMETHING_WENT_WRONG_WITH_USER_LOGIN);
 			}
 			return UDI;
 		}

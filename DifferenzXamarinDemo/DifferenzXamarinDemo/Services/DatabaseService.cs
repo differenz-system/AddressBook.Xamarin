@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DifferenzXamarinDemo.Helpers;
+﻿using System.Collections.Generic;
 using DifferenzXamarinDemo.Models;
 using SQLite;
 using Xamarin.Forms;

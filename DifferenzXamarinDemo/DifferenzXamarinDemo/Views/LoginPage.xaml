@@ -1,29 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:CustomControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.LoginPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Helpers="clr-namespace:DifferenzXamarinDemo.Helpers" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" ControlTemplate="{StaticResource HeaderTemplate}" Title="Login" BackgroundColor="{StaticResource SmokeWhiteColor}" >
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:CustomControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.LoginPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Helpers="clr-namespace:DifferenzXamarinDemo.Helpers" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" ControlTemplate="{StaticResource HeaderTemplate}" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" Title="Login" BackgroundColor="{StaticResource SmokeWhiteColor}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <StackLayout x:Name="mainStackView" Scale="0" VerticalOptions="FillAndExpand" Padding="{Static Services:LayoutService.MarginPadding50}" Spacing="{Static Services:LayoutService.Spacing10}">
-                    <Label Text="{Static Helpers:Constants.TEXT_EMAIL}" HorizontalOptions="Start" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="{Static Helpers:Constants.PLACEHOLDER_EMAIL}" HorizontalOptions="FillAndExpand">
+                    <Label Text="{Static resources:AppResources.TEXT_EMAIL}" HorizontalOptions="Start" Style="{StaticResource Size14BlackLabelStyle}"/>
+                    <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="{Static resources:AppResources.PLACEHOLDER_EMAIL}" HorizontalOptions="FillAndExpand">
                         <Entry.Behaviors>
                             <behaviors:AnimateSizeBehavior />
                         </Entry.Behaviors>
                     </Entry>
-                    <Label Text="{Static Helpers:Constants.TEXT_PASSWORD}" HorizontalOptions="Start" Style="{StaticResource Size14BlackLabelStyle}" />
-                    <Entry Text="{Binding Password}" Placeholder="{Static Helpers:Constants.PLACEHOLDER_PASSWORD}" HorizontalOptions="FillAndExpand" IsPassword="true">
+                    <Label Text="{Static resources:AppResources.TEXT_PASSWORD}" HorizontalOptions="Start" Style="{StaticResource Size14BlackLabelStyle}" />
+                    <Entry Text="{Binding Password}" Placeholder="{Static resources:AppResources.PLACEHOLDER_PASSWORD}" HorizontalOptions="FillAndExpand" IsPassword="true">
                         <Entry.Behaviors>
                             <behaviors:AnimateSizeBehavior/>
                         </Entry.Behaviors>
                     </Entry>
-                    <BoxView HeightRequest = "30"/>
-                    <Button Text="{Static Helpers:Constants.TEXT_LOG_IN}" Margin="{Static Services:LayoutService.MarginPadding00_30_00_00}" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand">
+                    <Button Text="{Static resources:AppResources.TEXT_LOG_IN}" Margin="{Static Services:LayoutService.MarginPadding00_30_00_00}" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand">
                         <Button.Behaviors>
                             <behaviors:AnimateSizeBehavior/>
                         </Button.Behaviors>
                     </Button>
-                    <Label Text="{Static Helpers:Constants.TEXT_OR}" HorizontalOptions="Center" Style="{StaticResource Size12BlackLabelStyle}" Margin="{Static Services:LayoutService.MarginPadding00_30_00_30}"/>
-                    <CustomControls:FacebookLoginButton Text="{Static Helpers:Constants.TEXT_LOGIN_WITH_FACEBOOK}" HorizontalOptions="FillAndExpand" >
+                    <Label Text="{Static resources:AppResources.TEXT_OR}" HorizontalOptions="Center" Style="{StaticResource Size12BlackLabelStyle}" Margin="{Static Services:LayoutService.MarginPadding00_30_00_30}"/>
+                    <CustomControls:FacebookLoginButton Text="{Static resources:AppResources.TEXT_LOGIN_WITH_FACEBOOK}" HorizontalOptions="FillAndExpand">
                         <CustomControls:FacebookLoginButton.Behaviors>
                             <behaviors:AnimateSizeBehavior/>
                         </CustomControls:FacebookLoginButton.Behaviors>

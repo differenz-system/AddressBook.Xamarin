@@ -1,37 +1,36 @@
 ﻿<Properties StartupConfiguration="{95DE92FB-ADA0-40E6-B9F9-BD6006DA064D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/App.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/App.xaml.cs">
     <Files>
-      <File FileName="DifferenzXamarinDemo/Helpers/Constants.cs" Line="44" Column="9" />
-      <File FileName="DifferenzXamarinDemo/Services/DatabaseService.cs" Line="35" Column="14" />
-      <File FileName="DifferenzXamarinDemo/Services/SessionService.cs" />
-      <File FileName="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" />
-      <File FileName="DifferenzXamarinDemo/ViewModels/MyDetailPageViewModel.cs" />
-      <File FileName="DifferenzXamarinDemo.iOS/Info.plist" />
-      <File FileName="DifferenzXamarinDemo.iOS/Helpers/SQLite_iOS.cs" Line="12" Column="19" />
-      <File FileName="DifferenzXamarinDemo.Android/Helpers/SQLite_Android.cs" Line="10" Column="45" />
-      <File FileName="DifferenzXamarinDemo.Android/Resources/values/colors.xml" Line="5" Column="43" />
-      <File FileName="DifferenzXamarinDemo.Android/Resources/values/styles.xml" Line="21" Column="69" />
-      <File FileName="DifferenzXamarinDemo/Views/LoginPage.xaml" Line="15" Column="42" />
-      <File FileName="DifferenzXamarinDemo/App.xaml" Line="30" Column="41" />
-      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml" Line="2" Column="876" />
-      <File FileName="DifferenzXamarinDemo/Views/MyDetailPage.xaml" Line="2" Column="880" />
+      <File FileName="DifferenzXamarinDemo/CustomControls/FacebookLoginButton.cs" Line="2" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Converters/ListVisibilityConverter.cs" Line="5" Column="26" />
+      <File FileName="DifferenzXamarinDemo/Converters/NoDataMessageVisibilityConverter.cs" Line="4" Column="21" />
+      <File FileName="DifferenzXamarinDemo/Models/HeaderModel.cs" Line="3" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Models/LanguageModel.cs" Line="1" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Models/LoginModel.cs" Line="3" Column="15" />
+      <File FileName="DifferenzXamarinDemo/Models/UserData.cs" Line="1" Column="14" />
+      <File FileName="DifferenzXamarinDemo/Services/APIService.cs" Line="2" Column="2" />
+      <File FileName="DifferenzXamarinDemo/Services/DatabaseService.cs" Line="4" Column="21" />
+      <File FileName="DifferenzXamarinDemo/Services/FacadeService.cs" Line="1" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Services/IoCService.cs" Line="1" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Services/LanguageService.cs" Line="6" Column="27" />
+      <File FileName="DifferenzXamarinDemo/Services/LoginService.cs" Line="5" Column="30" />
+      <File FileName="DifferenzXamarinDemo/Services/PopupNavigationService.cs" Line="2" Column="31" />
+      <File FileName="DifferenzXamarinDemo/Views/SubViews/HeaderView.xaml.cs" Line="1" Column="21" />
+      <File FileName="DifferenzXamarinDemo/Views/LoginPage.xaml.cs" Line="2" Column="21" />
+      <File FileName="DifferenzXamarinDemo/Views/MyDetailPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml.cs" Line="1" Column="21" />
+      <File FileName="DifferenzXamarinDemo/App.xaml.cs" Line="34" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DifferenzXamarinDemo" expanded="True">
-            <Node name="DifferenzXamarinDemo" expanded="True">
-              <Node name="Views" expanded="True" />
-              <Node name="App.xaml" selected="True" />
-            </Node>
+            <Node name="DifferenzXamarinDemo" expanded="True" />
             <Node name="DifferenzXamarinDemo.Android" expanded="True">
-              <Node name="Properties" expanded="True" />
-              <Node name="Resources" expanded="True">
-                <Node name="values" expanded="True" />
-              </Node>
+              <Node name="Renderers" expanded="True" />
             </Node>
             <Node name="DifferenzXamarinDemo.iOS" expanded="True">
-              <Node name="Helpers" expanded="True" />
+              <Node name="Renderers" expanded="True" />
             </Node>
           </Node>
         </State>

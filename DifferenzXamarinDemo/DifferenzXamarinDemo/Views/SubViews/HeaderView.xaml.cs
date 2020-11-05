@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Prism.Commands;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Views.SubViews
 {

@@ -1,9 +1,8 @@
-﻿using System;
-using SQLite;
+﻿using SQLite;
 
 namespace DifferenzXamarinDemo.Models
 {
-	public class UserData
+    public class UserData
 	{
 		public UserData()
 		{

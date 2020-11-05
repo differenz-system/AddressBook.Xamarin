@@ -1,5 +1,4 @@
-﻿using System;
-using DifferenzXamarinDemo.ViewModels;
+﻿using DifferenzXamarinDemo.ViewModels;
 using DifferenzXamarinDemo.Views;
 using Prism.Ioc;
 using Xamarin.Forms;
@@ -40,7 +39,6 @@ namespace DifferenzXamarinDemo.Services
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<MyDetailPage, MyDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<MyListPage, MyListPageViewModel>();
-           
         }
 
         /// <summary>

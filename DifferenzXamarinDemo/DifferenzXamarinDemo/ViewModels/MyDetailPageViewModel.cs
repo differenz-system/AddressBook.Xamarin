@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using DifferenzXamarinDemo.Helpers;
+using DifferenzXamarinDemo.LanguageResources;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
 using Prism.Commands;
@@ -14,9 +14,9 @@ namespace DifferenzXamarinDemo.ViewModels
         public MyDetailPageViewModel(INavigationService navigationService, FacadeService facadeService) : base(navigationService, facadeService)
         {
             var header = new HeaderModel();
-            header.HeaderText = Constants.TEXT_DETAIL;
-            header.LeftText = Constants.Text_ADDRESS_BOOK;
-            header.RightText = Constants.TEXT_LOGOUT;
+            header.HeaderText = AppResources.TEXT_DETAIL;
+            header.LeftText = AppResources.Text_ADDRESS_BOOK;
+            header.RightText = AppResources.TEXT_LOGOUT;
             header.LeftCommand = BackCommand;
             header.RightCommand = LogoutCommand;
             CurrentHeader = header;
@@ -29,8 +29,8 @@ namespace DifferenzXamarinDemo.ViewModels
         private string _emailAddress;
         private string _contactNumber;
         private bool _active;
-        private string _saveButtonText = Constants.TEXT_SAVE;
-        private string _deleteButtonText = Constants.TEXT_CANCEL;
+        private string _saveButtonText = AppResources.TEXT_SAVE;
+        private string _deleteButtonText = AppResources.TEXT_CANCEL;
         #endregion
 
         #region Public Properties
@@ -112,13 +112,13 @@ namespace DifferenzXamarinDemo.ViewModels
             {
                 if (!(Regex.IsMatch(EmailAddress, SessionService.EMAIL_REGEX, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250))))
                 {
-                    await DisplayAlertAsync(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_INVALID_EMAIL, Constants.TEXT_OK);
+                    await DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_INVALID_EMAIL, AppResources.TEXT_OK);
                     return;
                 }
 
                 if (!(Regex.IsMatch(ContactNumber, SessionService.PHONE_NO_REGEX, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250))))
                 {
-                    await DisplayAlertAsync(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_INVALID_CONTACT_NO, Constants.TEXT_OK);
+                    await DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_INVALID_CONTACT_NO, AppResources.TEXT_OK);
                     return;
                 }
 
@@ -131,12 +131,12 @@ namespace DifferenzXamarinDemo.ViewModels
                 userData.Active = Active;
                 DatabaseService.SaveItem(userData);
                 await ClosePopup();
-                await DisplayAlertAsync(Constants.TITLE_SUCCESS, Constants.MESSAGE_SUCCESS_DATA_UPDATED, Constants.TEXT_OK);
+                await DisplayAlertAsync(AppResources.TITLE_SUCCESS, AppResources.MESSAGE_SUCCESS_DATA_UPDATED, AppResources.TEXT_OK);
                 await _navigationService.GoBackAsync();
             }
             else
             {
-                await DisplayAlertAsync(Constants.TITLE_VALIDATION_ERROR, Constants.MESSAGE_ERROR_INSERT_ALL_DATA, Constants.TEXT_OK);
+                await DisplayAlertAsync(AppResources.TITLE_VALIDATION_ERROR, AppResources.MESSAGE_ERROR_INSERT_ALL_DATA, AppResources.TEXT_OK);
             }
         }
 
@@ -186,8 +186,8 @@ namespace DifferenzXamarinDemo.ViewModels
                 }
             }
 
-            SaveButtonText = Id == 0 ? Constants.TEXT_SAVE : Constants.TEXT_UPDATE; 
-            DeleteButtonText = Id == 0 ? Constants.TEXT_CANCEL : Constants.TEXT_DELETE; 
+            SaveButtonText = Id == 0 ? AppResources.TEXT_SAVE : AppResources.TEXT_UPDATE; 
+            DeleteButtonText = Id == 0 ? AppResources.TEXT_CANCEL : AppResources.TEXT_DELETE; 
         }
         #endregion
 

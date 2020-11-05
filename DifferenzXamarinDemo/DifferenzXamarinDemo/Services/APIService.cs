@@ -1,5 +1,4 @@
-﻿using System;
-namespace DifferenzXamarinDemo.Services
+﻿namespace DifferenzXamarinDemo.Services
 {
     public class APIService
     {

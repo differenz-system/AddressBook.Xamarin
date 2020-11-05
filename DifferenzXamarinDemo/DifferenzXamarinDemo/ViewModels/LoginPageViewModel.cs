@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using DifferenzXamarinDemo.Helpers;
+using DifferenzXamarinDemo.LanguageResources;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
 using Prism.Commands;
@@ -14,7 +14,7 @@ namespace DifferenzXamarinDemo.ViewModels
         public LoginPageViewModel(INavigationService navigationService, FacadeService facadeService) : base(navigationService, facadeService)
         {
             var header = new HeaderModel();
-            header.HeaderText = Constants.TEXT_LOGIN;
+            header.HeaderText = AppResources.TEXT_LOGIN;
             CurrentHeader = header;
         }
         #endregion
@@ -49,13 +49,13 @@ namespace DifferenzXamarinDemo.ViewModels
         {
             if (string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password))
             {
-                await DisplayAlertAsync(Constants.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, Constants.TITLE_ERROR, Constants.TEXT_OK);
+                await DisplayAlertAsync(AppResources.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, AppResources.TITLE_ERROR, AppResources.TEXT_OK);
                 return;
             }
 
             if (!(Regex.IsMatch(Email, SessionService.EMAIL_REGEX, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250))))
             {
-                await DisplayAlertAsync(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_INVALID_EMAIL, Constants.TEXT_OK);
+                await DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_INVALID_EMAIL, AppResources.TEXT_OK);
                 return;
             }
 
@@ -73,7 +73,7 @@ namespace DifferenzXamarinDemo.ViewModels
                 if (result.Errors.Count > 0)
                 {
                     await ClosePopup();
-                    await DisplayAlertAsync(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, Constants.TEXT_OK);
+                    await DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, AppResources.TEXT_OK);
                 }
                 else
                 {
@@ -84,7 +84,7 @@ namespace DifferenzXamarinDemo.ViewModels
             else
             {
                 await ClosePopup();
-                await DisplayAlertAsync(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, Constants.TEXT_OK);
+                await DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, AppResources.TEXT_OK);
             }
         }
         #endregion

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+    <data name="TITLE_ERROR" xml:space="preserve"> <value>Error</value> </data>
+    <data name="TITLE_SUCCESS" xml:space="preserve"> <value>Success</value> </data>
+    <data name="TITLE_VALIDATION_ERROR" xml:space="preserve"> <value>Validation Error</value> </data>
+    
+    <data name="MESSAGE_SUCCESS_DATA_UPDATED" xml:space="preserve"> <value>Your data is updated.</value> </data>
+    <data name="MESSAGE_ERROR_INSERT_ALL_DATA" xml:space="preserve"> <value>Please insert all data.</value> </data>
+    <data name="MESSAGE_ERROR_EMAIL_PASSWORD_ERROR" xml:space="preserve"> <value>Invalid email or password.</value> </data>
+    <data name="MESSAGE_ERROR_SOMETHING_WENT_WRONG_WITH_USER_LOGIN" xml:space="preserve"> <value>Sorry! something went wrong with the login process.</value> </data>
+    <data name="MESSAGE_ERROR_SESSION_EXPIRED" xml:space="preserve"> <value>Your session is expired, Please login again.</value> </data>
+    <data name="MESSAGE_ERROR_SOMETHING_WENT_WRONG" xml:space="preserve"> <value>Sorry! something went wrong.</value> </data>
+    <data name="MESSAGE_ERROR_INVALID_EMAIL" xml:space="preserve"> <value>Please enter valid email.</value> </data>
+    <data name="MESSAGE_ERROR_INVALID_CONTACT_NO" xml:space="preserve"> <value>Please enter valid contact number</value> </data>
+    
+    <data name="TEXT_OK" xml:space="preserve"> <value>OK</value> </data>
+    <data name="TEXT_LOGOUT" xml:space="preserve"> <value>Logout</value> </data>
+    <data name="TEXT_CANCEL" xml:space="preserve"> <value>Cancel</value> </data>
+    
+    <data name="TEXT_UPDATE" xml:space="preserve"> <value>Update</value> </data>
+    <data name="TEXT_DELETE" xml:space="preserve"> <value>Delete</value> </data>
+    <data name="TEXT_SAVE" xml:space="preserve"> <value>Save</value> </data>
+    <data name="TEXT_ADD" xml:space="preserve"> <value>Add</value> </data>
+    <data name="TEXT_LOGIN" xml:space="preserve"> <value>Login</value> </data>
+    <data name="TEXT_DETAIL" xml:space="preserve"> <value>Detail</value> </data>
+    <data name="Text_ADDRESS_BOOK" xml:space="preserve"> <value>Address Book</value> </data>
+    
+    <data name="TEXT_EMAIL" xml:space="preserve"> <value>Email</value> </data>S
+    <data name="TEXT_PASSWORD" xml:space="preserve"> <value>Password</value> </data>
+    <data name="TEXT_LOG_IN" xml:space="preserve"> <value>Log In</value> </data>
+    <data name="TEXT_OR" xml:space="preserve"> <value>Or</value> </data>
+    <data name="TEXT_LOGIN_WITH_FACEBOOK" xml:space="preserve"> <value>Login with Facebook</value> </data>
+    <data name="TEXT_NAME" xml:space="preserve"> <value>Name</value> </data>
+    <data name="TEXT_CONTACT_NUMBER" xml:space="preserve"> <value>Contact Number</value> </data>
+    <data name="TEXT_ACTIVE" xml:space="preserve"> <value>Active</value> </data>
+    <data name="TEXT_NO_DATA" xml:space="preserve"> <value>No Data</value> </data>
+    
+    <data name="PLACEHOLDER_PASSWORD" xml:space="preserve"> <value>Password goes here</value> </data>
+    <data name="PLACEHOLDER_EMAIL" xml:space="preserve"> <value>Email goes here</value> </data>
+    <data name="PLACEHOLDER_CONTACT_NO" xml:space="preserve"> <value>Contact number goes here</value> </data>
+    <data name="PLACEHOLDER_USERNAME" xml:space="preserve"> <value>User name goes here</value> </data>
+
+</root>

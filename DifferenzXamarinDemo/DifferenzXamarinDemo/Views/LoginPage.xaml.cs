@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DifferenzXamarinDemo.Helpers;
-using DifferenzXamarinDemo.Services;
+﻿using DifferenzXamarinDemo.Services;
 using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Views

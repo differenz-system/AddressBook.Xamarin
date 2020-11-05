@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
-using DifferenzXamarinDemo.Helpers;
+using DifferenzXamarinDemo.LanguageResources;
 using DifferenzXamarinDemo.ViewModels;
 using DifferenzXamarinDemo.Views;
 using Xamarin.Forms;
@@ -71,12 +70,12 @@ namespace DifferenzXamarinDemo.Services
                 }
                 else
                 {
-                    await ViewModelBase.DisplayAlertAsync(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_SESSION_EXPIRED, Constants.TEXT_CANCEL);
+                    await ViewModelBase.DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_SESSION_EXPIRED, AppResources.TEXT_CANCEL);
                 }
             }
             catch (Exception ex)
             {
-                await ViewModelBase.DisplayAlertAsync(Constants.TITLE_ERROR, Constants.MESSAGE_ERROR_SOMETHING_WENT_WRONG, Constants.TEXT_CANCEL);
+                await ViewModelBase.DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_SOMETHING_WENT_WRONG, AppResources.TEXT_CANCEL);
             }
         }
 

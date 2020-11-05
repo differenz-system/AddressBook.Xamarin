@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace DifferenzXamarinDemo.Models
 {
-	/// <summary>
-	/// LoginModel - Contains attributes for persisting user login data
-	/// </summary>
-	public class LoginModel
+    /// <summary>
+    /// LoginModel - Contains attributes for persisting user login data
+    /// </summary>
+    public class LoginModel
 	{
 		public LoginModel()
 		{

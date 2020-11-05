@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.MyDetailPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:Helpers="clr-namespace:DifferenzXamarinDemo.Helpers" ControlTemplate="{StaticResource HeaderTemplate}" Title="Detail" BackgroundColor="{StaticResource SmokeWhiteColor}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.MyDetailPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:Helpers="clr-namespace:DifferenzXamarinDemo.Helpers" ControlTemplate="{StaticResource HeaderTemplate}" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" Title="Detail" BackgroundColor="{StaticResource SmokeWhiteColor}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0">
             <ScrollView>
                 <StackLayout x:Name="MainStackLayout" VerticalOptions="CenterAndExpand" Padding="{Static Services:LayoutService.MarginPadding50}" Spacing="{Static Services:LayoutService.Spacing10}" Scale="0">
-                    <Label Text="{Static Helpers:Constants.TEXT_NAME}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Entry x:Name="nameEntry" Text="{Binding Name}" Placeholder="{Static Helpers:Constants.PLACEHOLDER_USERNAME}" >
+                    <Label Text="{Static resources:AppResources.TEXT_NAME}" Style="{StaticResource Size14BlackLabelStyle}"/>
+                    <Entry x:Name="nameEntry" Text="{Binding Name}" Placeholder="{Static resources:AppResources.PLACEHOLDER_USERNAME}" >
                         <Entry.Behaviors>
                             <behaviors:AnimateSizeBehavior />
                         </Entry.Behaviors>
                     </Entry>
-                    <Label Text="{Static Helpers:Constants.TEXT_EMAIL}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Entry x:Name="emailEntry" Text="{Binding EmailAddress}" Keyboard="Email" Placeholder="{Static Helpers:Constants.PLACEHOLDER_EMAIL}" >
+                    <Label Text="{Static resources:AppResources.TEXT_EMAIL}" Style="{StaticResource Size14BlackLabelStyle}"/>
+                    <Entry x:Name="emailEntry" Text="{Binding EmailAddress}" Keyboard="Email" Placeholder="{Static resources:AppResources.PLACEHOLDER_EMAIL}" >
                         <Entry.Behaviors>
                             <behaviors:AnimateSizeBehavior />
                         </Entry.Behaviors>
                     </Entry>
-                    <Label Text="{Static Helpers:Constants.TEXT_CONTACT_NUMBER}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Entry x:Name="contactEntry" Text="{Binding ContactNumber}" Keyboard="Telephone" Placeholder="{Static Helpers:Constants.PLACEHOLDER_CONTACT_NO}">
+                    <Label Text="{Static resources:AppResources.TEXT_CONTACT_NUMBER}" Style="{StaticResource Size14BlackLabelStyle}"/>
+                    <Entry x:Name="contactEntry" Text="{Binding ContactNumber}" Keyboard="Telephone" Placeholder="{Static resources:AppResources.PLACEHOLDER_CONTACT_NO}">
                         <Entry.Behaviors>
                             <behaviors:AnimateSizeBehavior />
                         </Entry.Behaviors>
                     </Entry>
-                    <Label Text="{Static Helpers:Constants.TEXT_ACTIVE}" Style="{StaticResource Size14BlackLabelStyle}"/>
+                    <Label Text="{Static resources:AppResources.TEXT_ACTIVE}" Style="{StaticResource Size14BlackLabelStyle}"/>
                     <Switch x:Name="doneEntry" IsToggled="{Binding Active}" HorizontalOptions="Start" OnColor="{StaticResource BrandColor}"/>
                     <Button Text="{Binding SaveButtonText}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Margin="{Static Services:LayoutService.MarginPadding00_30_00_00}"/>
                     <Button Text="{Binding DeleteButtonText}" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" />

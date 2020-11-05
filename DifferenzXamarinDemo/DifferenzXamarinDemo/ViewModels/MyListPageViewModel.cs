@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using DifferenzXamarinDemo.Helpers;
+using DifferenzXamarinDemo.LanguageResources;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
 using DifferenzXamarinDemo.Views;
@@ -15,9 +15,9 @@ namespace DifferenzXamarinDemo.ViewModels
         public MyListPageViewModel(INavigationService navigationService, FacadeService facadeService) : base(navigationService, facadeService)
         {
             var header = new HeaderModel();
-            header.HeaderText = Constants.Text_ADDRESS_BOOK;
-            header.LeftText = Constants.TEXT_LOGOUT;
-            header.RightText = Constants.TEXT_ADD;
+            header.HeaderText = AppResources.Text_ADDRESS_BOOK;
+            header.LeftText = AppResources.TEXT_LOGOUT;
+            header.RightText = AppResources.TEXT_ADD;
             header.LeftCommand = LogoutCommand;
             header.RightCommand = AddCommand;
             CurrentHeader = header;
