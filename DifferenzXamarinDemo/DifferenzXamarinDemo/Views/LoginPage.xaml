@@ -22,11 +22,15 @@
                         </Button.Behaviors>
                     </Button>
                     <Label Text="{Static resources:AppResources.TEXT_OR}" HorizontalOptions="Center" Style="{StaticResource Size12BlackLabelStyle}" Margin="{Static Services:LayoutService.MarginPadding00_30_00_30}"/>
-                    <CustomControls:FacebookLoginButton Text="{Static resources:AppResources.TEXT_LOGIN_WITH_FACEBOOK}" HorizontalOptions="FillAndExpand">
-                        <CustomControls:FacebookLoginButton.Behaviors>
-                            <behaviors:AnimateSizeBehavior/>
-                        </CustomControls:FacebookLoginButton.Behaviors>
-                    </CustomControls:FacebookLoginButton>
+                    <Frame Padding="0" Style="{StaticResource FacebookLoginFrameStyle}" IsClippedToBounds="True">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Spacing="{Static Services:LayoutService.Spacing10}">
+                            <Image Source="facebook" HeightRequest="{Static Services:LayoutService.HeightWidth50}" WidthRequest="{Static Services:LayoutService.HeightWidth50}" />
+                            <Label Text="{Static resources:AppResources.TEXT_LOGIN_WITH_FACEBOOK}" Style="{StaticResource Size16WhiteLabelStyle}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginWithFacebookCommand}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
                 </StackLayout>
             </ScrollView>
         </StackLayout>

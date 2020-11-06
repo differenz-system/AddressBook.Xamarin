@@ -1,36 +1,32 @@
-﻿<Properties StartupConfiguration="{95DE92FB-ADA0-40E6-B9F9-BD6006DA064D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/App.xaml.cs">
+﻿<Properties StartupConfiguration="{8F4B3DE7-3D72-4845-85B2-C135F2C9199F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/App.xaml">
     <Files>
-      <File FileName="DifferenzXamarinDemo/CustomControls/FacebookLoginButton.cs" Line="2" Column="1" />
-      <File FileName="DifferenzXamarinDemo/Converters/ListVisibilityConverter.cs" Line="5" Column="26" />
-      <File FileName="DifferenzXamarinDemo/Converters/NoDataMessageVisibilityConverter.cs" Line="4" Column="21" />
-      <File FileName="DifferenzXamarinDemo/Models/HeaderModel.cs" Line="3" Column="1" />
-      <File FileName="DifferenzXamarinDemo/Models/LanguageModel.cs" Line="1" Column="1" />
-      <File FileName="DifferenzXamarinDemo/Models/LoginModel.cs" Line="3" Column="15" />
-      <File FileName="DifferenzXamarinDemo/Models/UserData.cs" Line="1" Column="14" />
-      <File FileName="DifferenzXamarinDemo/Services/APIService.cs" Line="2" Column="2" />
-      <File FileName="DifferenzXamarinDemo/Services/DatabaseService.cs" Line="4" Column="21" />
-      <File FileName="DifferenzXamarinDemo/Services/FacadeService.cs" Line="1" Column="1" />
-      <File FileName="DifferenzXamarinDemo/Services/IoCService.cs" Line="1" Column="1" />
-      <File FileName="DifferenzXamarinDemo/Services/LanguageService.cs" Line="6" Column="27" />
-      <File FileName="DifferenzXamarinDemo/Services/LoginService.cs" Line="5" Column="30" />
-      <File FileName="DifferenzXamarinDemo/Services/PopupNavigationService.cs" Line="2" Column="31" />
-      <File FileName="DifferenzXamarinDemo/Views/SubViews/HeaderView.xaml.cs" Line="1" Column="21" />
-      <File FileName="DifferenzXamarinDemo/Views/LoginPage.xaml.cs" Line="2" Column="21" />
-      <File FileName="DifferenzXamarinDemo/Views/MyDetailPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="DifferenzXamarinDemo/Views/MyListPage.xaml.cs" Line="1" Column="21" />
-      <File FileName="DifferenzXamarinDemo/App.xaml.cs" Line="34" Column="7" />
+      <File FileName="DifferenzXamarinDemo/App.xaml" Line="74" Column="63" />
+      <File FileName="DifferenzXamarinDemo.Android/SplashActivity.cs" Line="18" Column="43" />
+      <File FileName="DifferenzXamarinDemo/Services/OAuthAuthenticatorService.cs" Line="17" Column="1" />
+      <File FileName="DifferenzXamarinDemo.Android/MainActivity.cs" Line="8" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DifferenzXamarinDemo" expanded="True">
-            <Node name="DifferenzXamarinDemo" expanded="True" />
+            <Node name="DifferenzXamarinDemo" expanded="True">
+              <Node name="Config" expanded="True" />
+              <Node name="LanguageResources" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="SubViews" expanded="True" />
+              </Node>
+              <Node name="App.xaml" selected="True" />
+            </Node>
             <Node name="DifferenzXamarinDemo.Android" expanded="True">
-              <Node name="Renderers" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
             </Node>
             <Node name="DifferenzXamarinDemo.iOS" expanded="True">
-              <Node name="Renderers" expanded="True" />
+              <Node name="Resources" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -44,7 +40,12 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
-      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressBook/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="12" column="1" />
+      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressBook/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="16" column="1" />
+      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressBook/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="195" column="1" />
+      <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
+      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressBook/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="166" column="1" />
+      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressBook/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="136" column="1" />
+      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressBook/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="117" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

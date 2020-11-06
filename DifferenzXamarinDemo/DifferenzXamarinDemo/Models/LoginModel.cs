@@ -17,7 +17,6 @@ namespace DifferenzXamarinDemo.Models
 		public string DeviceOSType { get; set; }
 		public string DeviceUDID { get; set; }
 		public string DeviceToken { get; set; }
-
 		public List<string> Errors { get; set; }
 	}
 
@@ -27,5 +26,10 @@ namespace DifferenzXamarinDemo.Models
 	public class LoginObject
 	{
 		public LoginModel LoginData { get; set; }
+	}
+
+	public partial class LoginResponse
+	{
+		public LoginObject Data { get; set; }
 	}
 }

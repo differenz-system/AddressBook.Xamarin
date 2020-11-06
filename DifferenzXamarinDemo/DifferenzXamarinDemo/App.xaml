@@ -20,6 +20,7 @@
         <Color x:Key="BlackColor">#000000</Color>
         <Color x:Key="WhiteColor">#FFFFFF</Color>
         <Color x:Key="GrayColor">#ACACAC</Color>
+        <Color x:Key="DarkBlueColor">#3b5998</Color>
 
         <!-- Converters -->
         <converters:NoDataMessageVisibilityConverter x:Key="noDataMessageVisibilityConverter" />
@@ -39,17 +40,7 @@
             <Setter Property="BorderWidth" Value="1" />
             <Setter Property="BorderColor" Value="{StaticResource BrandColor}" />
             <Setter Property="BorderRadius" Value="5" />
-            <Setter Property="HeightRequest" Value="{Static Services:LayoutService.HeightWidth40}" />
-        </Style>
-        <Style TargetType="CustomControls:FacebookLoginButton" >
-            <Setter Property="BackgroundColor" Value="{StaticResource BrandColor}" />
-            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
-            <Setter Property="TextTransform" Value="None" />
-            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
-            <Setter Property="BorderWidth" Value="1" />
-            <Setter Property="BorderColor" Value="{StaticResource BrandColor}" />
-            <Setter Property="BorderRadius" Value="5" />
-            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="HeightRequest" Value="{Static Services:LayoutService.HeightWidth50}" />
         </Style>
         <Style TargetType="Entry">
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
@@ -58,7 +49,7 @@
             <Setter Property="PlaceholderColor" Value="{StaticResource GrayColor}" />
             <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
-            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="HeightRequest" Value="{x:Static Services:LayoutService.HeightWidth40}" />
         </Style>
 
         <!--Label Styles-->
@@ -78,6 +69,11 @@
             <Setter Property="LineBreakMode" Value="TailTruncation" />
         </Style>
 
+        <Style x:Key="Size16WhiteLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+        </Style>
+
         <Style x:Key="Size15WhiteBoldLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize15}" />
             <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
@@ -88,6 +84,14 @@
         <Style x:Key="Size20BlackLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize20}" />
             <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+        </Style>
+
+        <!-- Frame Style -->
+        <Style x:Key="FacebookLoginFrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource DarkBlueColor}" />
+            <Setter Property="HasShadow" Value="False" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="HeightRequest" Value="{Static Services:LayoutService.HeightWidth50}" />
         </Style>
 
     </Application.Resources>

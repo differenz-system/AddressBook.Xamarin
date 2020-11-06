@@ -20,6 +20,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.6" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomControls\" />
@@ -32,6 +33,7 @@
     <Folder Include="Converters\" />
     <Folder Include="Views\Popups\" />
     <Folder Include="LanguageResources\" />
+    <Folder Include="Config\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="LanguageResources\AppResources.resx">

@@ -47,6 +47,12 @@ namespace DifferenzXamarinDemo.LanguageResources {
             }
         }
         
+        internal static string TITLE_ALERT {
+            get {
+                return ResourceManager.GetString("TITLE_ALERT", resourceCulture);
+            }
+        }
+        
         internal static string TITLE_ERROR {
             get {
                 return ResourceManager.GetString("TITLE_ERROR", resourceCulture);
@@ -110,6 +116,12 @@ namespace DifferenzXamarinDemo.LanguageResources {
         internal static string MESSAGE_ERROR_INVALID_CONTACT_NO {
             get {
                 return ResourceManager.GetString("MESSAGE_ERROR_INVALID_CONTACT_NO", resourceCulture);
+            }
+        }
+        
+        internal static string MESSAGE_ERROR_NO_INTERNET {
+            get {
+                return ResourceManager.GetString("MESSAGE_ERROR_NO_INTERNET", resourceCulture);
             }
         }
         

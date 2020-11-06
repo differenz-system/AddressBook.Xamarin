@@ -91,6 +91,7 @@ namespace DifferenzXamarinDemo.Services
             GridHeightWidth50 = sizeConvertAsPerDevice(50);
             GridHeightWidth60 = sizeConvertAsPerDevice(60);
             GridHeightWidth80 = sizeConvertAsPerDevice(80);
+            GridHeightWidth100 = sizeConvertAsPerDevice(100);
             GridHeightWidth120 = sizeConvertAsPerDevice(120);
             GBCallGridHeight50 = sizeConvertAsPerDevice(50);
 
@@ -678,6 +679,11 @@ namespace DifferenzXamarinDemo.Services
         /// Gets or sets the GridHeightWidth80.
         /// </summary>
         public static GridLength GridHeightWidth80 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the GridHeightWidth100.
+        /// </summary>
+        public static GridLength GridHeightWidth100 { get; set; }
 
         /// <summary>
         /// Gets or sets the GridHeightWidth120.

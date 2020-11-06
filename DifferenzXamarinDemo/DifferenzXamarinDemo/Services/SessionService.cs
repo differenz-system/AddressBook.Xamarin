@@ -54,6 +54,7 @@ namespace DifferenzXamarinDemo.Services
             _Token = null;
 
             SettingsService.IsLoggedIn = false;
+            SettingsService.LoggedInUserEmail = string.Empty;
             await App.AppNavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
         }
 

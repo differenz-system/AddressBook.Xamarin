@@ -40,9 +40,9 @@ namespace DifferenzXamarinDemo.Services
 
 				var result = response.Content.ReadAsStringAsync().Result;
 				
-				var resultobject = JsonConvert.DeserializeObject<LoginModel>(result);
+				var resultobject = JsonConvert.DeserializeObject<LoginResponse>(result);
 
-				UDI = resultobject;
+				UDI = resultobject?.Data?.LoginData;
 			}
 			catch (Exception ex)
 			{

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
 using DifferenzXamarinDemo.Views.Popups;
+using Plugin.Connectivity;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -142,6 +143,23 @@ namespace DifferenzXamarinDemo.ViewModels
             if (!string.IsNullOrEmpty(message))
             {
                 await App.Current.MainPage.DisplayAlert(title, message, buttonText);
+            }
+        }
+
+        /// <summary>
+        /// CheckConnectivity.
+        /// </summary>
+        /// <returns>.</returns>
+        public bool CheckConnectivity()
+        {
+            try
+            {
+                return CrossConnectivity.Current.IsConnected;                
+            }
+            catch (Exception ex)
+            {
+                TelemetryService.Instance.Record(ex);
+                return false;
             }
         }
 

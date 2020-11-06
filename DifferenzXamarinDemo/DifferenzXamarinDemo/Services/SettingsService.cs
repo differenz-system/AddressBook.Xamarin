@@ -51,5 +51,20 @@ namespace DifferenzXamarinDemo.Services
 				AppSettings.AddOrUpdateValue(IsLoggedInKey, value);
 			}
 		}
-	}
+
+        private const string LoggedInUserEmailKey = "LoggedInUserEmail_key";
+        private static readonly string LoggedInUserEmailDefault = string.Empty;
+        public static string LoggedInUserEmail
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(LoggedInUserEmailKey, LoggedInUserEmailDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(LoggedInUserEmailKey, value);
+            }
+        }
+
+    }
 }

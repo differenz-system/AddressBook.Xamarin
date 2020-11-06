@@ -1,4 +1,6 @@
-﻿using Foundation; 
+﻿using System;
+using DifferenzXamarinDemo.Services;
+using Foundation; 
 using UIKit;
 
 namespace DifferenzXamarinDemo.iOS
@@ -24,9 +26,21 @@ namespace DifferenzXamarinDemo.iOS
 
             Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+        {
+            // Convert iOS NSUrl to C#/netxf/BCL System.Uri - common API
+            Uri uri_netfx = new Uri(url.AbsoluteString);
+
+            // load redirect_url Page for parsing
+            OAuthAuthenticatorService.AuthenticationState.OnPageLoading(uri_netfx);
+
+            return true;
         }
     }
 }

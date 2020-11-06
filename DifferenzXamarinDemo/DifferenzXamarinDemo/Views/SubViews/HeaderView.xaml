@@ -3,20 +3,20 @@
     <ContentView.Content>
         <Grid BackgroundColor="{StaticResource BrandColor}" HeightRequest="{Static Services:LayoutService.HeightWidth50}" ColumnSpacing="{Static Services:LayoutService.Spacing05}" RowSpacing="0" Padding="{Static Services:LayoutService.MarginPadding10_00_10_00}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="{Static Services:LayoutService.GridHeightWidth50}"/>
             </Grid.RowDefinitions>
-            <Label Text="{Binding LeftText}" Style="{StaticResource Size15WhiteLabelStyle}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
+            <Label Text="{Binding LeftText}" Style="{StaticResource Size15WhiteLabelStyle}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="0">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding LeftCommand}" />
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="{Binding HeaderText}" Style="{StaticResource Size15WhiteBoldLabelStyle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1"/>
-            <Label Text="{Binding RightText}" Style="{StaticResource Size15WhiteLabelStyle}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="2">
+            <Label Text="{Binding HeaderText}" Style="{StaticResource Size15WhiteBoldLabelStyle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+            <Label Text="{Binding RightText}" Style="{StaticResource Size15WhiteLabelStyle}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="2">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding RightCommand}" />
                 </Label.GestureRecognizers>

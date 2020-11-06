@@ -10,18 +10,16 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <ContentView Padding="{Static Services:LayoutService.MarginPadding00_05_00_05}">
-                                    <Frame BackgroundColor="{StaticResource WhiteColor}" Padding="{Static Services:LayoutService.MarginPadding10}" OutlineColor="Silver" HasShadow="false">
-                                        <StackLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{Static Services:LayoutService.Spacing10}">
-                                            <Label Text="{Binding Name}" Style="{StaticResource Size20BlackLabelStyle}" />
-                                            <Label Text="{Binding EmailAddress}" Style="{StaticResource Size14BlackLabelStyle}" />
-                                            <Label Text="{Binding ContactNumber}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                                        </StackLayout>
-                                    </Frame>
-                                    <ContentView.GestureRecognizers>
+                                <Frame BackgroundColor="{StaticResource WhiteColor}" Margin="{Static Services:LayoutService.MarginPadding00_05_00_05}" Padding="{Static Services:LayoutService.MarginPadding10}" OutlineColor="Silver" HasShadow="false">
+                                    <StackLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{Static Services:LayoutService.Spacing10}">
+                                        <Label Text="{Binding Name}" Style="{StaticResource Size20BlackLabelStyle}" />
+                                        <Label Text="{Binding EmailAddress}" Style="{StaticResource Size14BlackLabelStyle}" />
+                                        <Label Text="{Binding ContactNumber}" Style="{StaticResource Size14BlackLabelStyle}"/>
+                                    </StackLayout>
+                                    <Frame.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Source={x:Reference MyList}, Path=BindingContext.SelectItemCommand}" CommandParameter="{Binding .}" />
-                                    </ContentView.GestureRecognizers>
-                                </ContentView>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
