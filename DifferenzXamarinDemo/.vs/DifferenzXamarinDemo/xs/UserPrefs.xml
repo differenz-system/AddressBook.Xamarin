@@ -1,30 +1,23 @@
 ﻿<Properties StartupConfiguration="{8F4B3DE7-3D72-4845-85B2-C135F2C9199F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo/App.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo.Android/Properties/AndroidManifest.xml">
     <Files>
       <File FileName="DifferenzXamarinDemo/App.xaml" Line="72" Column="57" />
       <File FileName="DifferenzXamarinDemo.Android/SplashActivity.cs" />
       <File FileName="DifferenzXamarinDemo/Services/OAuthAuthenticatorService.cs" />
       <File FileName="DifferenzXamarinDemo.Android/MainActivity.cs" />
+      <File FileName="DifferenzXamarinDemo.Android/Properties/AndroidManifest.xml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DifferenzXamarinDemo" expanded="True">
-            <Node name="DifferenzXamarinDemo" expanded="True">
-              <Node name="Config" expanded="True" />
-              <Node name="LanguageResources" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True" />
-            </Node>
             <Node name="DifferenzXamarinDemo.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="AndroidManifest.xml" selected="True" />
               </Node>
-            </Node>
-            <Node name="DifferenzXamarinDemo.iOS" expanded="True">
               <Node name="Resources" expanded="True" />
             </Node>
+            <Node name="DifferenzXamarinDemo.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
