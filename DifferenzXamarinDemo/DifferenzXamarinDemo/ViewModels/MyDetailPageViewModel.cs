@@ -15,8 +15,8 @@ namespace DifferenzXamarinDemo.ViewModels
         {
             var header = new HeaderModel();
             header.HeaderText = AppResources.TEXT_DETAIL;
-            header.LeftText = AppResources.Text_ADDRESS_BOOK;
-            header.RightText = AppResources.TEXT_LOGOUT;
+            header.LeftText = "book-open"; //AppResources.Text_ADDRESS_BOOK;
+            header.RightText = "sign-out-alt"; //AppResources.TEXT_LOGOUT;
             header.LeftCommand = BackCommand;
             header.RightCommand = LogoutCommand;
             CurrentHeader = header;
@@ -131,7 +131,7 @@ namespace DifferenzXamarinDemo.ViewModels
                 userData.Active = Active;
                 DatabaseService.SaveItem(userData);
                 await ClosePopup();
-                await DisplayAlertAsync(AppResources.TITLE_SUCCESS, AppResources.MESSAGE_SUCCESS_DATA_UPDATED, AppResources.TEXT_OK);
+                await DisplayAlertAsync(AppResources.TITLE_SUCCESS, SaveButtonText == AppResources.TEXT_SAVE ? AppResources.MESSAGE_SUCCESS_DATA_SAVE : AppResources.MESSAGE_SUCCESS_DATA_UPDATED, AppResources.TEXT_OK);
                 await _navigationService.GoBackAsync();
             }
             else
@@ -186,8 +186,8 @@ namespace DifferenzXamarinDemo.ViewModels
                 }
             }
 
-            SaveButtonText = Id == 0 ? AppResources.TEXT_SAVE : AppResources.TEXT_UPDATE; 
-            DeleteButtonText = Id == 0 ? AppResources.TEXT_CANCEL : AppResources.TEXT_DELETE; 
+            SaveButtonText = Id == 0 ? AppResources.TEXT_SAVE : AppResources.TEXT_UPDATE;
+            DeleteButtonText = Id == 0 ? AppResources.TEXT_CANCEL : AppResources.TEXT_DELETE;
         }
         #endregion
 

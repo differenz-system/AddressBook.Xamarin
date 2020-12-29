@@ -36,7 +36,7 @@ namespace DifferenzXamarinDemo.Services
             }
             CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo(lan.LanguageCode);
             AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
-           
+
         }
 
         private static LanguageModel GetDefaultDeviceCulture()

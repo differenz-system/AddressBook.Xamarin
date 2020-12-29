@@ -2,22 +2,24 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Droid
 {
-    [Activity(Label = "Address Book", Icon = "@mipmap/icon", RoundIcon = "@mipmap/round_icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+    [Activity(Label = "Address Book", Icon = "@mipmap/icon", RoundIcon = "@mipmap/round_icon", Theme = "@style/LaunchTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
+            
             base.OnCreate(savedInstanceState);
 
             #region PackageInitialization
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Forms.SetFlags(new[] { "Shapes_Experimental", "Brush_Experimental" });
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);

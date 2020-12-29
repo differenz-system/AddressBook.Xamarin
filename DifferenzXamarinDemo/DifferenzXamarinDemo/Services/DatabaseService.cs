@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using DifferenzXamarinDemo.Models;
 using SQLite;
-using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Services
 {
@@ -26,7 +27,8 @@ namespace DifferenzXamarinDemo.Services
             {
                 if (_instance == null)
                 {
-                    _instance = DependencyService.Get<ISQLite>().GetConnection();
+                    string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3");
+                    _instance = new SQLiteConnection(dbPath);
                     _instance.CreateTable<UserData>();
                 }
                 return _instance;

@@ -71,6 +71,12 @@ namespace DifferenzXamarinDemo.LanguageResources {
             }
         }
         
+        internal static string MESSAGE_SUCCESS_DATA_SAVE {
+            get {
+                return ResourceManager.GetString("MESSAGE_SUCCESS_DATA_SAVE", resourceCulture);
+            }
+        }
+        
         internal static string MESSAGE_SUCCESS_DATA_UPDATED {
             get {
                 return ResourceManager.GetString("MESSAGE_SUCCESS_DATA_UPDATED", resourceCulture);
@@ -260,6 +266,12 @@ namespace DifferenzXamarinDemo.LanguageResources {
         internal static string PLACEHOLDER_USERNAME {
             get {
                 return ResourceManager.GetString("PLACEHOLDER_USERNAME", resourceCulture);
+            }
+        }
+        
+        internal static string PLACEHOLDER_SEARCH_CONTACT {
+            get {
+                return ResourceManager.GetString("PLACEHOLDER_SEARCH_CONTACT", resourceCulture);
             }
         }
     }

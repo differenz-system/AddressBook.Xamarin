@@ -2,12 +2,13 @@
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Support.V7.App;
+//using Android.Support.V7.App;
 using Android.Util;
+using AndroidX.AppCompat.App;
 
 namespace DifferenzXamarinDemo.Droid
 {
-    [Activity(Label = "Address Book", Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "Address Book", Theme = "@style/LaunchTheme", MainLauncher = false, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
         static readonly string TAG = "X:" + typeof(SplashActivity).Name;

@@ -1,26 +1,43 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.Views.SubViews.HeaderView" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" >
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.Views.SubViews.HeaderView" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:sh="http://sharpnado.com" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" xmlns:prism="http://prismlibrary.com" BackgroundColor="Black">
     <ContentView.Content>
-        <Grid BackgroundColor="{StaticResource BrandColor}" HeightRequest="{Static Services:LayoutService.HeightWidth50}" ColumnSpacing="{Static Services:LayoutService.Spacing05}" RowSpacing="0" Padding="{Static Services:LayoutService.MarginPadding10_00_10_00}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="{Static Services:LayoutService.GridHeightWidth50}"/>
-            </Grid.RowDefinitions>
-            <Label Text="{Binding LeftText}" Style="{StaticResource Size15WhiteLabelStyle}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="0">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding LeftCommand}" />
-                </Label.GestureRecognizers>
-            </Label>
-            <Label Text="{Binding HeaderText}" Style="{StaticResource Size15WhiteBoldLabelStyle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
-            <Label Text="{Binding RightText}" Style="{StaticResource Size15WhiteLabelStyle}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="2">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding RightCommand}" />
-                </Label.GestureRecognizers>
-            </Label>
-        </Grid>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <pancakeView:PancakeView BackgroundColor="Red" CornerRadius="0,0,30,30" IsClippedToBounds="True" >
+                <Grid ColumnSpacing="{Static Services:LayoutService.Spacing05}" HeightRequest="200" RowSpacing="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image Source="background" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                    <ImageButton Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Command="{Binding LeftCommand}"  HeightRequest="{Static Services:LayoutService.HeightWidth30}" WidthRequest="{Static Services:LayoutService.HeightWidth30}" Margin="{Static Services:LayoutService.MarginPadding20_20_00_00}" >
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="FA_Solid" Glyph="{Binding LeftText}" Size="{x:Static Services:LayoutService.FontSize30}" Color="{StaticResource WhiteColor}" />
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Grid.Row="0" Grid.ColumnSpan="3" Text="{Binding HeaderText}" FontSize="25" Style="{StaticResource Size20WhiteBoldLabelStyle}" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  />
+                    <ImageButton Grid.Row="0" Grid.Column="2" VerticalOptions="Start" HorizontalOptions="End" Command="{Binding RightCommand}"  HeightRequest="{Static Services:LayoutService.HeightWidth30}" WidthRequest="{Static Services:LayoutService.HeightWidth30}" Margin="{Static Services:LayoutService.MarginPadding00_20_20_00}" >
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="FA_Solid" Glyph="{Binding RightText}" Size="{x:Static Services:LayoutService.FontSize25}" Color="{StaticResource WhiteColor}" />
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Grid>
+            </pancakeView:PancakeView>
+            <BoxView IsVisible="{Binding IsVisiblesearchEntry}" BackgroundColor="Transparent" HeightRequest="{Static Services:LayoutService.HeightWidth40}" />
+            <sh:Shadows IsVisible="{Binding IsVisiblesearchEntry}" CornerRadius="25" Margin="40,-75,40,30" Shades="{sh:SingleShade Offset='0, 10', Opacity=0.5, Color={StaticResource PrimaryColor}}">
+                <Frame BackgroundColor="{AppThemeBinding Dark={StaticResource LightBlackColor}, Light={StaticResource WhiteColor}}" HasShadow="False" Padding="{Static Services:LayoutService.MarginPadding10_00_10_00}" CornerRadius="{Static Services:LayoutService.CornerRadius25}" BorderColor="{AppThemeBinding Dark={StaticResource PrimaryColor}, Light={StaticResource WhiteColor}}" IsClippedToBounds="True">
+                    <customControls:CustomEntry Text="{Binding SearchText}" FontSize="{x:Static Services:LayoutService.FontSize18}" Keyboard="Email" Placeholder="{Static resources:AppResources.PLACEHOLDER_SEARCH_CONTACT}" Margin="5" HorizontalOptions="FillAndExpand" BorderWidth="0" BorderColor="Transparent">
+                        <customControls:CustomEntry.Behaviors>
+                            <prism:EventToCommandBehavior EventName="TextChanged" Command="{Binding SearchContactCommand}" CommandParameter="{Binding SearchText}" />
+                        </customControls:CustomEntry.Behaviors>
+                    </customControls:CustomEntry>
+                </Frame>
+            </sh:Shadows>
+        </StackLayout>
     </ContentView.Content>
 </ContentView>

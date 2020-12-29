@@ -70,7 +70,7 @@ namespace DifferenzXamarinDemo.ViewModels
 
         public virtual void OnNavigatingTo(INavigationParameters parameters)
         {
-            
+
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace DifferenzXamarinDemo.ViewModels
         {
             try
             {
-                return CrossConnectivity.Current.IsConnected;                
+                return CrossConnectivity.Current.IsConnected;
             }
             catch (Exception ex)
             {

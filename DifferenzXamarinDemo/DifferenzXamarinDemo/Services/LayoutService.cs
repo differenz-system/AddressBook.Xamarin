@@ -122,6 +122,8 @@ namespace DifferenzXamarinDemo.Services
             MarginPadding15_00_00_00 = MarginPaddingConvertAsPerDevice(15, 00, 00, 00);
             MarginPadding00_00_15_00 = MarginPaddingConvertAsPerDevice(00, 00, 15, 00);
             MarginPadding20_00_20_00 = MarginPaddingConvertAsPerDevice(20, 00, 20, 00);
+            MarginPadding20_20_00_00 = MarginPaddingConvertAsPerDevice(20, 20, 00, 00);
+            MarginPadding00_20_20_00 = MarginPaddingConvertAsPerDevice(00, 20, 20, 00);
             MarginPadding00_00_20_00 = MarginPaddingConvertAsPerDevice(00, 00, 20, 00);
             MarginPadding00_20_00_00 = MarginPaddingConvertAsPerDevice(00, 20, 00, 00);
             MarginPadding00_20_00_20 = MarginPaddingConvertAsPerDevice(00, 20, 00, 20);
@@ -830,6 +832,16 @@ namespace DifferenzXamarinDemo.Services
         public static Thickness MarginPadding20_00_20_00 { get; set; }
 
         /// <summary>
+        /// Gets or sets the MarginPadding20_20_00_00.
+        /// </summary>
+        public static Thickness MarginPadding20_20_00_00 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the MarginPadding00_20_20_00.
+        /// </summary>
+        public static Thickness MarginPadding00_20_20_00 { get; set; }
+
+        /// <summary>
         /// Gets or sets the MarginPadding00_00_20_00.
         /// </summary>
         public static Thickness MarginPadding00_00_20_00 { get; set; }
@@ -991,6 +1003,6 @@ namespace DifferenzXamarinDemo.Services
 
         #endregion
 
-        
+
     }
 }

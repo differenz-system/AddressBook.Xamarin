@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.App" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:CustomControls="clr-namespace:DifferenzXamarinDemo.CustomControls" xmlns:SubViews="clr-namespace:DifferenzXamarinDemo.Views.SubViews">
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.App" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" xmlns:SubViews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows">
     <Application.Resources>
 
         <!-- Templates-->
@@ -15,82 +15,167 @@
         </ControlTemplate>
 
         <!-- Colors -->
-        <Color x:Key="BrandColor">#008080</Color>
+        <Color x:Key="PrimaryColor">#235B5F</Color>
+        <!-- Dark Teal -->
+        <Color x:Key="SecondaryColor">#5BDABB</Color>
+        <!-- Light Teal -->
+
         <Color x:Key="SmokeWhiteColor">#eeeeee</Color>
         <Color x:Key="BlackColor">#000000</Color>
         <Color x:Key="WhiteColor">#FFFFFF</Color>
         <Color x:Key="GrayColor">#ACACAC</Color>
         <Color x:Key="DarkBlueColor">#3b5998</Color>
+        <Color x:Key="LightBlackColor">#202020</Color>
 
         <!-- Converters -->
         <converters:NoDataMessageVisibilityConverter x:Key="noDataMessageVisibilityConverter" />
         <converters:ListVisibilityConverter x:Key="listVisibilityConverter" />
 
         <!--Base Style-->
+
         <Style TargetType="Label">
-            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize12}" />
+            <Setter Property="FontFamily" Value="RobotoRegular" />
         </Style>
+
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="HeightRequest" Value="{x:Static Services:LayoutService.HeightWidth25}" />
+            <Setter Property="WidthRequest" Value="{x:Static Services:LayoutService.HeightWidth25}" />
+        </Style>
+
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{StaticResource BrandColor}" />
             <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
             <Setter Property="TextTransform" Value="None" />
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
-            <Setter Property="BorderWidth" Value="1" />
-            <Setter Property="BorderColor" Value="{StaticResource BrandColor}" />
-            <Setter Property="BorderRadius" Value="5" />
+            <Setter Property="BorderWidth" Value="0" />
+            <Setter Property="BorderColor" Value="Transparent" />
+            <Setter Property="CornerRadius" Value="25" />
             <Setter Property="HeightRequest" Value="{Static Services:LayoutService.HeightWidth50}" />
+            <Setter Property="FontFamily" Value="RobotoBold" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.1" />
+                        <GradientStop Color="{StaticResource PrimaryColor}" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         </Style>
         <Style TargetType="Entry">
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="VerticalOptions" Value="Center" />
-            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
             <Setter Property="PlaceholderColor" Value="{StaticResource GrayColor}" />
-            <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}" />
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
             <Setter Property="HeightRequest" Value="{x:Static Services:LayoutService.HeightWidth40}" />
+            <Setter Property="FontFamily" Value="RobotoRegular" />
+        </Style>
+
+        <Style TargetType="customControls:CustomEntry">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource GrayColor}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource LightBlackColor}, Light={StaticResource WhiteColor}}" />
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
+            <Setter Property="HeightRequest" Value="{x:Static Services:LayoutService.HeightWidth40}" />
+            <Setter Property="FontFamily" Value="RobotoRegular" />
+            <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="IsCurvedCornersEnabled" Value="True" />
+            <Setter Property="BorderWidth">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32" Android="5" iOS="2" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="btnShadow" TargetType="sh:Shadows">
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="Shades">
+                <Setter.Value>
+                    <sh:SingleShade Offset="0,10" Opacity="0.3" Color="{StaticResource DarkBlueColor}" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="entryShadow" TargetType="sh:Shadows">
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Shades">
+                <Setter.Value>
+                    <sh:SingleShade Offset="0,10" Opacity="0.3" Color="{StaticResource DarkBlueColor}" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}" />
         </Style>
 
         <!--Label Styles-->
-        <Style x:Key="Size12BlackLabelStyle" TargetType="Label">
+
+        <Style x:Key="Size12BlackBoldLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize12}" />
-            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
+            <Setter Property="FontFamily" Value="RobotoBold" />
         </Style>
 
         <Style x:Key="Size14BlackLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize14}" />
-            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
         </Style>
 
-        <Style x:Key="Size15WhiteLabelStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize15}" />
-            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
-            <Setter Property="LineBreakMode" Value="TailTruncation" />
-        </Style>
-
-        <Style x:Key="Size16WhiteLabelStyle" TargetType="Label">
+        <Style x:Key="Size16BlackBoldLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
-            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
+            <Setter Property="FontFamily" Value="RobotoBold" />
         </Style>
 
-        <Style x:Key="Size15WhiteBoldLabelStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize15}" />
-            <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
-            <Setter Property="FontAttributes" Value="Bold" />
+        <Style x:Key="Size16WhiteBoldLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize16}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}" />
+            <Setter Property="FontFamily" Value="RobotoBold" />
+        </Style>
+
+        <Style x:Key="Size20WhiteBoldLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize20}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}" />
+            <Setter Property="FontFamily" Value="RobotoBold" />
             <Setter Property="LineBreakMode" Value="TailTruncation" />
         </Style>
 
-        <Style x:Key="Size20BlackLabelStyle" TargetType="Label">
+        <Style x:Key="Size20BlackBoldLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize20}" />
-            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
+            <Setter Property="FontFamily" Value="RobotoBold" />
+        </Style>
+
+        <Style x:Key="RegularIconLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="FA_Regular" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}" />
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize25}" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+
+        <Style x:Key="SolidIconLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="FA_Solid" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}" />
+            <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize25}" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0" />
         </Style>
 
         <!-- Frame Style -->
         <Style x:Key="FacebookLoginFrameStyle" TargetType="Frame">
             <Setter Property="BackgroundColor" Value="{StaticResource DarkBlueColor}" />
             <Setter Property="HasShadow" Value="False" />
-            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="CornerRadius" Value="25" />
             <Setter Property="HeightRequest" Value="{Static Services:LayoutService.HeightWidth50}" />
         </Style>
 

@@ -2,6 +2,7 @@
 using DifferenzXamarinDemo.Services;
 using Foundation; 
 using UIKit;
+using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.iOS
 {
@@ -25,8 +26,11 @@ namespace DifferenzXamarinDemo.iOS
 #endif
 
             Rg.Plugins.Popup.Popup.Init();
+            Forms.SetFlags(new[] { "Shapes_Experimental", "Brush_Experimental" });
+
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
+            Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -1,5 +1,4 @@
-﻿using System;
-namespace DifferenzXamarinDemo.Models
+﻿namespace DifferenzXamarinDemo.Models
 {
     public enum OAuth2ProviderType
     {

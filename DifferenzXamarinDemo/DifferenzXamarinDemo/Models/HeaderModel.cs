@@ -36,6 +36,15 @@ namespace DifferenzXamarinDemo.Models
         /// </summary>
         private DelegateCommand _rightCommand = null;
 
+        /// <summary>
+        /// Defines the _searchContactCommand.
+        /// </summary>
+        private DelegateCommand<string> _searchContactCommand = null;
+
+        /// <summary>
+        /// Defines the _isVisibleSearchEntry.
+        /// </summary>
+        private bool _isVisibleSearchEntry = false;
         #endregion
 
         #region Public Properties
@@ -83,6 +92,31 @@ namespace DifferenzXamarinDemo.Models
         {
             get { return _rightCommand; }
             set { SetProperty(ref _rightCommand, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the IsVisiblesearchEntry.
+        /// </summary>
+        public bool IsVisiblesearchEntry
+        {
+            get { return _isVisibleSearchEntry; }
+            set { SetProperty(ref _isVisibleSearchEntry, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the SearchContactCommand.
+        /// </summary>
+        public DelegateCommand<string> SearchContactCommand
+        {
+            get { return _searchContactCommand; }
+            set { SetProperty(ref _searchContactCommand, value); }
+        }
+
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set { SetProperty(ref _searchText, value); }
         }
 
         #endregion

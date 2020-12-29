@@ -1,30 +1,72 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" x:Class="DifferenzXamarinDemo.Views.MyListPage" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:Helpers="clr-namespace:DifferenzXamarinDemo.Helpers" ControlTemplate="{StaticResource HeaderTemplate}" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" Title="Address Book" BackgroundColor="{StaticResource SmokeWhiteColor}">
+<ContentPage x:Name="page" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" x:Class="DifferenzXamarinDemo.Views.MyListPage" xmlns:converters="clr-namespace:DifferenzXamarinDemo.Converters" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:Helpers="clr-namespace:DifferenzXamarinDemo.Helpers" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" xmlns:sh="http://sharpnado.com" Title="Address Book" ControlTemplate="{StaticResource HeaderTemplate}" BackgroundColor="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0">
-            <ContentView Padding="{Static Services:LayoutService.MarginPadding20}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding UserList, Converter={StaticResource noDataMessageVisibilityConverter}}">
+            <ContentView Padding="{Static Services:LayoutService.MarginPadding20}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsVisibleMessage}">
                 <Label Text="{Static resources:AppResources.TEXT_NO_DATA}" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Style="{StaticResource Size14BlackLabelStyle}"/>
             </ContentView>
-            <ListView BackgroundColor="Transparent" x:Name="MyList" IsVisible="{Binding UserList, Converter={StaticResource listVisibilityConverter}}" Scale="0" ItemsSource="{Binding UserList, Mode=TwoWay}" HasUnevenRows="true" SeparatorVisibility="None" Margin="{Static Services:LayoutService.MarginPadding10}">
-                <ListView.ItemTemplate>
+            <flv:FlowListView x:Name="MyList" FlowColumnCount="1" SeparatorVisibility="None" HasUnevenRows="True" IsGroupingEnabled="true" FlowGroupDisplayBinding="{Binding Key}" FlowGroupShortNameBinding="{Binding Key}" FlowItemsSource="{Binding Items}" Margin="0">
+                <flv:FlowListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <ViewCell.View>
-                                <Frame BackgroundColor="{StaticResource WhiteColor}" Margin="{Static Services:LayoutService.MarginPadding00_05_00_05}" Padding="{Static Services:LayoutService.MarginPadding10}" OutlineColor="Silver" HasShadow="false">
-                                    <StackLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{Static Services:LayoutService.Spacing10}">
-                                        <Label Text="{Binding Name}" Style="{StaticResource Size20BlackLabelStyle}" />
-                                        <Label Text="{Binding EmailAddress}" Style="{StaticResource Size14BlackLabelStyle}" />
-                                        <Label Text="{Binding ContactNumber}" Style="{StaticResource Size14BlackLabelStyle}"/>
+                            <Grid>
+                                <StackLayout Grid.Row="0" Opacity="0.6" Padding="{Static Services:LayoutService.MarginPadding10}" BackgroundColor="{StaticResource SecondaryColor}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <StackLayout.Background>
+                                        <LinearGradientBrush EndPoint="1,1" >
+                                            <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.1" />
+                                            <GradientStop Color="{StaticResource PrimaryColor}" Offset="1.0" />
+                                        </LinearGradientBrush>
+                                    </StackLayout.Background>
+                                </StackLayout>
+                                <Label Grid.Row="0" Text="{Binding Key}" Style="{StaticResource Size16BlackBoldLabelStyle}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Margin="{Static Services:LayoutService.MarginPadding10}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </flv:FlowListView.GroupHeaderTemplate>
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <SwipeView BackgroundColor="Transparent">
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItemView Command="{Binding Path=BindingContext.DeleteItemCommand, Source={x:Reference MyList}}" CommandParameter="{Binding .}">
+                                        <pancakeView:PancakeView WidthRequest="{Static Services:LayoutService.HeightWidth100}" BackgroundColor="Transparent" Margin="0" CornerRadius="0,15,0,15" IsClippedToBounds="True">
+                                            <Image Aspect="AspectFit" WidthRequest="{Static Services:LayoutService.HeightWidth30}" HeightRequest="{Static Services:LayoutService.HeightWidth30}" HorizontalOptions="CenterAndExpand" Source="delete" VerticalOptions="CenterAndExpand" />
+                                        </pancakeView:PancakeView>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <sh:Shadows x:Name="FrameShadows" CornerRadius="15" >
+                                <sh:Shadows.Shades>
+                                    <sh:ImmutableShades>
+                                        <sh:Shade BlurRadius="10" Opacity="0.1" Offset="-7,-7" Color="{StaticResource PrimaryColor}" />
+                                        <sh:Shade BlurRadius="05" Opacity="0.2" Offset="7,7" Color="{StaticResource PrimaryColor}" />
+                                    </sh:ImmutableShades>
+                                </sh:Shadows.Shades>
+                                <Frame CornerRadius="{Static Services:LayoutService.CornerRadius15}" BackgroundColor="{AppThemeBinding Dark={StaticResource LightBlackColor}, Light={StaticResource WhiteColor}}" Margin="{Static Services:LayoutService.MarginPadding15}" Padding="0" HasShadow="false" IsClippedToBounds="True">
+                                    <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{AppThemeBinding Dark=#101010, Light={StaticResource WhiteColor}}">
+                                        <Frame WidthRequest="7" CornerRadius="0" BackgroundColor="{StaticResource PrimaryColor}" HasShadow="False" HorizontalOptions="Start" Padding="0" >
+                                            <Frame.Background>
+                                                <LinearGradientBrush EndPoint="1,1" >
+                                                    <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.1" />
+                                                    <GradientStop Color="{StaticResource PrimaryColor}" Offset="1.0" />
+                                                </LinearGradientBrush>
+                                            </Frame.Background>
+                                        </Frame>
+                                        <StackLayout BackgroundColor="{AppThemeBinding Dark={StaticResource LightBlackColor}, Light={StaticResource WhiteColor}}" Padding="{Static Services:LayoutService.MarginPadding15}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="{Static Services:LayoutService.Spacing10}">
+                                            <Label Text="{Binding Name}" Style="{StaticResource Size20BlackBoldLabelStyle}" />
+                                            <Label CharacterSpacing="1.1" Opacity="0.9" Text="{Binding EmailAddress}" Style="{StaticResource Size14BlackLabelStyle}" />
+                                            <Label CharacterSpacing="1.1" Opacity="0.9" Text="{Binding ContactNumber}" Style="{StaticResource Size14BlackLabelStyle}" />
+                                        </StackLayout>
                                     </StackLayout>
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Source={x:Reference MyList}, Path=BindingContext.SelectItemCommand}" CommandParameter="{Binding .}" />
                                     </Frame.GestureRecognizers>
                                 </Frame>
-                            </ViewCell.View>
-                        </ViewCell>
+                            </sh:Shadows>
+                        </SwipeView>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </flv:FlowListView.FlowColumnTemplate>
+            </flv:FlowListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

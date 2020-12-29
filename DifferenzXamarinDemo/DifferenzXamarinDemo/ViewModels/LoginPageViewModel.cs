@@ -61,7 +61,7 @@ namespace DifferenzXamarinDemo.ViewModels
             {
                 if (string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Password))
                 {
-                    await DisplayAlertAsync(AppResources.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, AppResources.TITLE_ERROR, AppResources.TEXT_OK);
+                    await DisplayAlertAsync(AppResources.TITLE_ERROR, AppResources.MESSAGE_ERROR_EMAIL_PASSWORD_ERROR, AppResources.TEXT_OK);
                     return;
                 }
 

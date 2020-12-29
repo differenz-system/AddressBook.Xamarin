@@ -8,13 +8,14 @@ namespace DifferenzXamarinDemo.Views
         public LoginPage()
         {
             InitializeComponent();
+            mainStackView.ScaleTo(0);
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             SettingsService.IsLoggedIn = false;
-            await mainStackView.ScaleTo(1, 250, Easing.SinIn);
+            await mainStackView.ScaleTo(1, 250, Easing.Linear);
         }
     }
 }

@@ -1,33 +1,43 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:subviews="clr-namespace:DifferenzXamarinDemo.Views.SubViews" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.MyDetailPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:Helpers="clr-namespace:DifferenzXamarinDemo.Helpers" ControlTemplate="{StaticResource HeaderTemplate}" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" Title="Detail" BackgroundColor="{StaticResource SmokeWhiteColor}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.MyDetailPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services"  ControlTemplate="{StaticResource HeaderTemplate}" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" Title="Detail" BackgroundColor="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0">
-             <ScrollView>
-                <StackLayout x:Name="MainStackLayout" VerticalOptions="CenterAndExpand" Padding="{Static Services:LayoutService.MarginPadding50}" Spacing="{Static Services:LayoutService.Spacing10}" Scale="0">
-                    <Label Text="{Static resources:AppResources.TEXT_NAME}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Entry x:Name="nameEntry" Text="{Binding Name}" Placeholder="{Static resources:AppResources.PLACEHOLDER_USERNAME}" >
-                        <Entry.Behaviors>
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="MainStackLayout" VerticalOptions="CenterAndExpand" Padding="{Static Services:LayoutService.MarginPadding50}" Spacing="{Static Services:LayoutService.Spacing20}" Scale="0">
+                <Label Text="{Static resources:AppResources.TEXT_NAME}" Style="{StaticResource Size16BlackBoldLabelStyle}"/>
+                <sh:Shadows Style="{StaticResource entryShadow}">
+                    <customControls:CustomEntry x:Name="nameEntry" Text="{Binding Name}" Placeholder="{Static resources:AppResources.PLACEHOLDER_USERNAME}" >
+                        <customControls:CustomEntry.Behaviors>
                             <behaviors:AnimateSizeBehavior />
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Label Text="{Static resources:AppResources.TEXT_EMAIL}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Entry x:Name="emailEntry" Text="{Binding EmailAddress}" Keyboard="Email" Placeholder="{Static resources:AppResources.PLACEHOLDER_EMAIL}" >
-                        <Entry.Behaviors>
+                        </customControls:CustomEntry.Behaviors>
+                    </customControls:CustomEntry>
+                </sh:Shadows>
+                <Label Text="{Static resources:AppResources.TEXT_EMAIL}" Style="{StaticResource Size16BlackBoldLabelStyle}"/>
+                <sh:Shadows Style="{StaticResource entryShadow}">
+                    <customControls:CustomEntry x:Name="emailEntry" Text="{Binding EmailAddress}" Keyboard="Email" Placeholder="{Static resources:AppResources.PLACEHOLDER_EMAIL}" >
+                        <customControls:CustomEntry.Behaviors>
                             <behaviors:AnimateSizeBehavior />
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Label Text="{Static resources:AppResources.TEXT_CONTACT_NUMBER}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Entry x:Name="contactEntry" Text="{Binding ContactNumber}" Keyboard="Telephone" Placeholder="{Static resources:AppResources.PLACEHOLDER_CONTACT_NO}">
-                        <Entry.Behaviors>
+                        </customControls:CustomEntry.Behaviors>
+                    </customControls:CustomEntry>
+                </sh:Shadows>
+                <Label Text="{Static resources:AppResources.TEXT_CONTACT_NUMBER}" Style="{StaticResource Size16BlackBoldLabelStyle}"/>
+                <sh:Shadows Style="{StaticResource entryShadow}">
+                    <customControls:CustomEntry x:Name="contactEntry" Text="{Binding ContactNumber}" Keyboard="Telephone" Placeholder="{Static resources:AppResources.PLACEHOLDER_CONTACT_NO}">
+                        <customControls:CustomEntry.Behaviors>
                             <behaviors:AnimateSizeBehavior />
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Label Text="{Static resources:AppResources.TEXT_ACTIVE}" Style="{StaticResource Size14BlackLabelStyle}"/>
-                    <Switch x:Name="doneEntry" IsToggled="{Binding Active}" HorizontalOptions="Start" OnColor="{StaticResource BrandColor}"/>
-                    <Button Text="{Binding SaveButtonText}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Margin="{Static Services:LayoutService.MarginPadding00_30_00_00}"/>
-                    <Button Text="{Binding DeleteButtonText}" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" />
+                        </customControls:CustomEntry.Behaviors>
+                    </customControls:CustomEntry>
+                </sh:Shadows>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Horizontal" Spacing="{Static Services:LayoutService.Spacing30}" Padding="{Static Services:LayoutService.MarginPadding00_10_00_00}">
+                    <Label Text="{Static resources:AppResources.TEXT_ACTIVE}" Style="{StaticResource Size16BlackBoldLabelStyle}" VerticalOptions="Center"/>
+                    <Switch x:Name="doneEntry" IsToggled="{Binding Active}" HorizontalOptions="Start" OnColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
-            </ScrollView>
-        </StackLayout>
+                <sh:Shadows Style="{StaticResource btnShadow}">
+                    <Button Text="{Binding SaveButtonText}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Margin="{Static Services:LayoutService.MarginPadding00_10_00_00}"/>
+                </sh:Shadows>
+                <sh:Shadows Style="{StaticResource btnShadow}" >
+                    <Button Text="{Binding DeleteButtonText}" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" />
+                </sh:Shadows>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -21,6 +21,9 @@
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.6" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="Sharpnado.Shadows" Version="1.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomControls\" />
@@ -34,6 +37,14 @@
     <Folder Include="Views\Popups\" />
     <Folder Include="LanguageResources\" />
     <Folder Include="Config\" />
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\font_awesome_free_regular.otf" />
+    <EmbeddedResource Include="Fonts\font_awesome_free_solid.otf" />
+    <EmbeddedResource Include="Fonts\MaterialIcons.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="LanguageResources\AppResources.resx">
@@ -45,5 +56,12 @@
     <Compile Update="LanguageResources\AppResources.Designer.cs">
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Fonts\font_awesome_free_regular.otf" />
+    <None Remove="Fonts\font_awesome_free_solid.otf" />
+    <None Remove="Fonts\MaterialIcons.ttf" />
+    <None Remove="Fonts\Roboto-Bold.ttf" />
+    <None Remove="Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
 </Project>

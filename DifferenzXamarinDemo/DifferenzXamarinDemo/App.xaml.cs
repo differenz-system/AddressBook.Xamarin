@@ -3,6 +3,7 @@ using DifferenzXamarinDemo.Views;
 using Prism;
 using Prism.Ioc;
 using Prism.Navigation;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo
@@ -11,6 +12,7 @@ namespace DifferenzXamarinDemo
     {
         public App() : this(null)
         {
+
         }
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
@@ -20,9 +22,12 @@ namespace DifferenzXamarinDemo
         protected override void OnInitialized()
         {
             InitializeComponent();
+            Device.SetFlags(new[] { "SwipeView_Experimental", "AppTheme_Experimental" });
+            App.Current.UserAppTheme = (OSAppTheme)AppInfo.RequestedTheme;
 
             AppNavigationService = NavigationService;
             LanguageService.Init();
+            Sharpnado.Shades.Initializer.Initialize(true, true, filter: "ShadowsRenderer");
             if (SettingsService.IsLoggedIn)
             {
                 SessionService.AutoLogin();
@@ -49,6 +54,7 @@ namespace DifferenzXamarinDemo
 
         protected override void OnResume()
         {
+            App.Current.UserAppTheme = (OSAppTheme)AppInfo.RequestedTheme;
         }
     }
 }

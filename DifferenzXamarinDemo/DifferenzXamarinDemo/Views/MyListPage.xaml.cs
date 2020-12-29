@@ -6,7 +6,8 @@ namespace DifferenzXamarinDemo.Views
     {
         public MyListPage()
         {
-            InitializeComponent();  
+            InitializeComponent();
+            MyList.ScaleTo(0);
         }
 
         protected async override void OnAppearing()

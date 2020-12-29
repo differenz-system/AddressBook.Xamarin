@@ -18,6 +18,7 @@
     <data name="TITLE_SUCCESS" xml:space="preserve"> <value>Success</value> </data>
     <data name="TITLE_VALIDATION_ERROR" xml:space="preserve"> <value>Validation Error</value> </data>
     
+    <data name="MESSAGE_SUCCESS_DATA_SAVE" xml:space="preserve"> <value>Contact Save successfully.</value> </data>
     <data name="MESSAGE_SUCCESS_DATA_UPDATED" xml:space="preserve"> <value>Your data is updated.</value> </data>
     <data name="MESSAGE_ERROR_INSERT_ALL_DATA" xml:space="preserve"> <value>Please insert all data.</value> </data>
     <data name="MESSAGE_ERROR_EMAIL_PASSWORD_ERROR" xml:space="preserve"> <value>Invalid email or password.</value> </data>
@@ -48,11 +49,12 @@
     <data name="TEXT_NAME" xml:space="preserve"> <value>Name</value> </data>
     <data name="TEXT_CONTACT_NUMBER" xml:space="preserve"> <value>Contact Number</value> </data>
     <data name="TEXT_ACTIVE" xml:space="preserve"> <value>Active</value> </data>
-    <data name="TEXT_NO_DATA" xml:space="preserve"> <value>No Data</value> </data>
+    <data name="TEXT_NO_DATA" xml:space="preserve"> <value>No Contact</value> </data>
     
     <data name="PLACEHOLDER_PASSWORD" xml:space="preserve"> <value>Password goes here</value> </data>
     <data name="PLACEHOLDER_EMAIL" xml:space="preserve"> <value>Email goes here</value> </data>
     <data name="PLACEHOLDER_CONTACT_NO" xml:space="preserve"> <value>Contact number goes here</value> </data>
     <data name="PLACEHOLDER_USERNAME" xml:space="preserve"> <value>User name goes here</value> </data>
-
+    <data name="PLACEHOLDER_SEARCH_CONTACT" xml:space="preserve"> <value>Search name...</value> </data>
+    
 </root>

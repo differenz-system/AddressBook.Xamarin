@@ -47,7 +47,7 @@ namespace DifferenzXamarinDemo.Services
         /// <param name="ex">Exception.</param>
         public void Record(Exception ex)
         {
-            Debug.WriteLine(ex.Message);   
-        }   
+            Debug.WriteLine(ex.Message);
+        }
     }
 }
