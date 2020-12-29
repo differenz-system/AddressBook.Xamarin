@@ -3,13 +3,23 @@
 This repository contains **Address Book** application for Xamarin that shows design & coding practices followed by **[Differenz System](http://www.differenzsystem.com/)**. 
 
 The app does the following:
-1. **Login:** User can login via facebook or email/password. 
-2. **Home:** It will list all the save contacts, having the option to add a new contact on the top right.
-3. **Create new contact:** User can add a new contact to his address book by filling details here.
-
+1. **Login:** 
+    - User can login via facebook or email/password. 
+2. **Home:** 
+    - It will list all the saved contacts. 
+    - It has the option to add a new contact on the top right.
+    - Contact can be deleted by swiping card to left and clicking on trash icon.
+    - User can edit contact by tapping on contact.
+3. **Create new contact:** 
+    - User can add a new contact to his address book by filling details here.
+4. **Dark/Light Mode:** 
+    - App supports Light & Dark mode, user can change mode by going into device dark mode settings.
+5. **Localization:**
+    - App is designed to extend support for multiple languages. Currently we have added support for english language.
+    
 ## Pre-requisites
 - iOS device or emulator running iOS 7 or above
-- Android device or emulator running API 16 (4.0.3 - Ice cream sandwich) or above
+- Android device or emulator running API 21 (5.0 - Lollipop) or above
 - [Android SDK 27](https://developer.android.com/about/versions/oreo/android-8.0-migration.html#ptb)
 - [Xcode 9](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW936)
 - [Visual Studio](https://www.visualstudio.com/vs/features/mobile-app-development/#downloadvs)
@@ -23,13 +33,14 @@ The app does the following:
 4. Select project to run (android or ios) from top left after toolbar. Click on :arrow_forward: button
 
 ## Key Tools & Technologies
-- **Database:** [sqlite-net](https://components.xamarin.com/view/sqlite-net) (1.8.0)
-- **Authentication:** [Xamarin.Auth](https://github.com/xamarin/Xamarin.Auth) (1.3.0)
-- **API/Service calls:** HttpClient 
-- **IDE:** [Visual Studio Community for MAC](https://www.visualstudio.com/vs/visual-studio-mac/) (7.3.3)
-- **Framework:** [MVVM](https://developer.xamarin.com/guides/xamarin-forms/enterprise-application-patterns/mvvm/)
+- **Database:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/1.7.335) (1.7.335)
+- **Authentication:** [Xamarin.Auth](https://www.nuget.org/packages/Xamarin.Auth/1.7.0) (1.7.0)
+- **API/Service calls:** HttpClient
+- **IDE:** [Visual Studio Community for MAC](https://www.visualstudio.com/vs/visual-studio-mac/) (8.7.8)
+- **Framework:** [Prism](https://prismlibrary.com/docs/xamarin-forms/Getting-Started.html)
+- **Localization:** [Plugin.Multilingual](https://www.nuget.org/packages/Plugin.Multilingual/1.0.2) (1.0.2)
 
-- **Others:** [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) (2.5.0.280555), [Nuget](https://www.nuget.org/) (4.3.1.4445), [.NET Core](https://www.microsoft.com/net/learn/get-started/macos) 2.0.0, [Xamarin.Android](https://developer.xamarin.com/api/root/MonoAndroid-lib/) (8.1.5.0), Xamarin.iOS (11.6.1.4)
+- **Others:** [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) (4.8.0.1560), [Nuget](https://www.nuget.org/) (5.7.0.6702), [.NET Standard](https://www.microsoft.com/net/learn/get-started/macos) (2.0), [Xamarin.Android](https://developer.xamarin.com/api/root/MonoAndroid-lib/) (11.0.2.0), Xamarin.iOS (14.0.0.0)
 
 ## Screenshots
 ### Android
