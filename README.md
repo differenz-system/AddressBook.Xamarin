@@ -50,6 +50,6 @@ The app does the following:
 <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/login.png" width="280"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/list.png" width="280"> <img src="https://github.com/differenz-system/AddressBook.Xamarin/blob/master/ScreenShots/iOS/detail.png" width="280">
 
 ## Support
-If you've found an error in this sample, please [report an issue](https://github.com/differenz-system/AddressBook.Android/issues/new). You can also send your feedback and suggestions at info@differenzsystem.com
+If you've found an error in this sample, please [report an issue](https://github.com/differenz-system/AddressBook.Xamarin/issues/new). You can also send your feedback and suggestions at info@differenzsystem.com
 
 Happy coding!
