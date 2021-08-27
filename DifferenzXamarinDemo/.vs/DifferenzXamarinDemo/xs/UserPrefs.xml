@@ -1,41 +1,20 @@
 ﻿<Properties StartupConfiguration="{8F4B3DE7-3D72-4845-85B2-C135F2C9199F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DifferenzXamarinDemo.Android/Properties/AndroidManifest.xml">
-    <Files>
-      <File FileName="DifferenzXamarinDemo/App.xaml" Line="72" Column="57" />
-      <File FileName="DifferenzXamarinDemo.Android/SplashActivity.cs" />
-      <File FileName="DifferenzXamarinDemo/Services/OAuthAuthenticatorService.cs" />
-      <File FileName="DifferenzXamarinDemo.Android/MainActivity.cs" />
-      <File FileName="DifferenzXamarinDemo.Android/Properties/AndroidManifest.xml" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DifferenzXamarinDemo" expanded="True">
-            <Node name="DifferenzXamarinDemo.Android" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="AndroidManifest.xml" selected="True" />
-              </Node>
-              <Node name="Resources" expanded="True" />
-            </Node>
-            <Node name="DifferenzXamarinDemo.iOS" expanded="True" />
-          </Node>
+          <Node name="DifferenzXamarinDemo" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.07578E5B-630C-4050-AC08-9CDEDE117799" />
+  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.iOS Xamarin.HotReload.DebuggerTimeoutException.DifferenzXamarinDemo.iOS.HideInfoBar="True" automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4A99EF3A-8CC3-4082-A332-CD4B05EF54E1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.Android PreferredExecutionTarget="Android.RZ8N22DTYNA" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.DifferenzXamarinDemo.Android PreferredExecutionTarget="Android.Pixel_4_XL_API_30" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
-      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressbook_master/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="16" column="1" />
-      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressbook_master/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="195" column="1" />
-      <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
-      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressbook_master/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="166" column="1" />
-      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressbook_master/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="136" column="1" />
-      <Breakpoint file="/Users/differenz180/Documents/SourceTree/XamarinAddressbook_master/DifferenzXamarinDemo/DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" relfile="DifferenzXamarinDemo/ViewModels/LoginPageViewModel.cs" line="117" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

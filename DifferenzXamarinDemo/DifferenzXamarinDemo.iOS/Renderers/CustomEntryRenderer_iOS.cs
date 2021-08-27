@@ -20,7 +20,7 @@ namespace DifferenzXamarinDemo.iOS.Renderers
                 var view = (CustomEntry)Element;
 
                 Control.LeftView = new UIView(new CGRect(0f, 0f, 0f, 0f));
-                
+
                 Control.LeftViewMode = UITextFieldViewMode.Always;
 
                 Control.KeyboardAppearance = UIKeyboardAppearance.Dark;

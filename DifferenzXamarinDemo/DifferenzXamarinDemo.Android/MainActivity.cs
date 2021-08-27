@@ -13,11 +13,11 @@ namespace DifferenzXamarinDemo.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            
+
             base.OnCreate(savedInstanceState);
 
             #region PackageInitialization
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Forms.SetFlags(new[] { "Shapes_Experimental", "Brush_Experimental" });
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

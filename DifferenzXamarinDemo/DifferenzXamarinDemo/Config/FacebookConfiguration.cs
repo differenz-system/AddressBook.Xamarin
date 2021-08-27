@@ -1,5 +1,4 @@
-﻿using System;
-namespace DifferenzXamarinDemo.Config
+﻿namespace DifferenzXamarinDemo.Config
 {
     public class FacebookConfiguration
     {

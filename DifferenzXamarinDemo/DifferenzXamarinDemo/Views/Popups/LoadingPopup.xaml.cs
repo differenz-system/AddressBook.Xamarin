@@ -2,7 +2,7 @@
 
 namespace DifferenzXamarinDemo.Views.Popups
 {
-    public partial class LoadingPopup : PopupPage 
+    public partial class LoadingPopup : PopupPage
     {
         public LoadingPopup()
         {

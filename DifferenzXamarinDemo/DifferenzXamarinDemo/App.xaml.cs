@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo
 {
-    public partial class App 
+    public partial class App
     {
         public App() : this(null)
         {
@@ -17,7 +17,7 @@ namespace DifferenzXamarinDemo
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
-        public static INavigationService AppNavigationService { get; set; } 
+        public static INavigationService AppNavigationService { get; set; }
 
         protected override void OnInitialized()
         {

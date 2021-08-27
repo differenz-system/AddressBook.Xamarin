@@ -164,7 +164,14 @@ namespace DifferenzXamarinDemo.ViewModels
         /// </summary>
         async void Add()
         {
-            await _navigationService.NavigateAsync($"{nameof(MyDetailPage)}");
+            try
+            {
+                await _navigationService.NavigateAsync($"{nameof(MyDetailPage)}");
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
         #endregion
 

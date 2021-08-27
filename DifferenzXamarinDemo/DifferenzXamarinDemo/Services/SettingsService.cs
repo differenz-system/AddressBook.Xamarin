@@ -1,5 +1,4 @@
-﻿using Plugin.Settings;
-using Plugin.Settings.Abstractions;
+﻿using Xamarin.Essentials;
 
 namespace DifferenzXamarinDemo.Services
 {
@@ -10,14 +9,6 @@ namespace DifferenzXamarinDemo.Services
 	/// </summary>
     public static class SettingsService
     {
-        private static ISettings AppSettings
-        {
-            get
-            {
-                return CrossSettings.Current;
-            }
-        }
-
         #region Setting Constants
 
         private const string SettingsKey = "settings_key";
@@ -29,11 +20,11 @@ namespace DifferenzXamarinDemo.Services
         {
             get
             {
-                return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+                return Preferences.Get(SettingsKey, SettingsDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(SettingsKey, value);
+                Preferences.Set(SettingsKey, value);
             }
         }
 
@@ -44,11 +35,11 @@ namespace DifferenzXamarinDemo.Services
         {
             get
             {
-                return AppSettings.GetValueOrDefault(IsLoggedInKey, IsLoggedInDefault);
+                return Preferences.Get(IsLoggedInKey, IsLoggedInDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(IsLoggedInKey, value);
+                Preferences.Set(IsLoggedInKey, value);
             }
         }
 
@@ -58,11 +49,11 @@ namespace DifferenzXamarinDemo.Services
         {
             get
             {
-                return AppSettings.GetValueOrDefault(LoggedInUserEmailKey, LoggedInUserEmailDefault);
+                return Preferences.Get(LoggedInUserEmailKey, LoggedInUserEmailDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(LoggedInUserEmailKey, value);
+                Preferences.Set(LoggedInUserEmailKey, value);
             }
         }
 

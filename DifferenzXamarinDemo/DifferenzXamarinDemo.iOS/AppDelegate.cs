@@ -1,6 +1,6 @@
 ﻿using System;
 using DifferenzXamarinDemo.Services;
-using Foundation; 
+using Foundation;
 using UIKit;
 using Xamarin.Forms;
 

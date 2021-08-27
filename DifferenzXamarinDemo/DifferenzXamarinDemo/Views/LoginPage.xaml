@@ -22,7 +22,7 @@
                 <sh:Shadows Style="{StaticResource btnShadow}">
                     <Button Text="{Static resources:AppResources.TEXT_LOG_IN}" BorderColor="Transparent" BorderWidth="0" Margin="{Static Services:LayoutService.MarginPadding00_30_00_00}" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand"/>
                 </sh:Shadows>
-                
+
                 <Label Text="{Static resources:AppResources.TEXT_OR}" HorizontalOptions="Center" Style="{StaticResource Size12BlackBoldLabelStyle}" Margin="{Static Services:LayoutService.MarginPadding00_30_00_30}"/>
                 <sh:Shadows Style="{StaticResource btnShadow}">
                     <Frame Padding="0" Style="{StaticResource FacebookLoginFrameStyle}" IsClippedToBounds="True">
