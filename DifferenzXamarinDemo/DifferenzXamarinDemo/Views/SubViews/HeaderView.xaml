@@ -2,18 +2,15 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DifferenzXamarinDemo.Views.SubViews.HeaderView" xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" xmlns:sh="http://sharpnado.com" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" xmlns:prism="http://prismlibrary.com" BackgroundColor="Black">
     <ContentView.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <pancakeView:PancakeView BackgroundColor="Red" CornerRadius="0,0,30,30" IsClippedToBounds="True" >
+            <pancakeView:PancakeView CornerRadius="0,0,30,30" IsClippedToBounds="True" >
                 <Grid ColumnSpacing="{Static Services:LayoutService.Spacing05}" HeightRequest="200" RowSpacing="0" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="{Static Services:LayoutService.GridHeightWidth100}" />
                     </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
 
-                    <Image Source="background" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Image Source="background" Margin="0" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
                     <ImageButton Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Command="{Binding LeftCommand}"  HeightRequest="{Static Services:LayoutService.HeightWidth30}" WidthRequest="{Static Services:LayoutService.HeightWidth30}" Margin="{Static Services:LayoutService.MarginPadding20_20_00_00}" >
                         <ImageButton.Source>
