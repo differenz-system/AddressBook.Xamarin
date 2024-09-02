@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  xmlns:behaviors="clr-namespace:DifferenzXamarinDemo.Behaviors" xmlns:customControls="clr-namespace:DifferenzXamarinDemo.CustomControls" x:Class="DifferenzXamarinDemo.Views.LoginPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="True" NavigationPage.HasNavigationBar="False" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True"  xmlns:Services="clr-namespace:DifferenzXamarinDemo.Services" ControlTemplate="{StaticResource HeaderTemplate}" xmlns:resources="clr-namespace:DifferenzXamarinDemo.LanguageResources" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" Title="Login" BackgroundColor="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}">
     <ContentPage.Content>
-        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView BackgroundColor="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout x:Name="mainStackView" Scale="0" VerticalOptions="FillAndExpand" Padding="{Static Services:LayoutService.MarginPadding50}" Spacing="{Static Services:LayoutService.Spacing20}">
                 <Label Text="{Static resources:AppResources.TEXT_EMAIL}" HorizontalOptions="Start" Style="{StaticResource Size16BlackBoldLabelStyle}"/>
                 <sh:Shadows Style="{StaticResource entryShadow}">

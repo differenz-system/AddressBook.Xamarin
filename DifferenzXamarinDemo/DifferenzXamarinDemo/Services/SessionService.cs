@@ -2,6 +2,8 @@
 using DifferenzXamarinDemo.LanguageResources;
 using DifferenzXamarinDemo.ViewModels;
 using DifferenzXamarinDemo.Views;
+using DifferenzXamarinDemo.Views.Popups;
+using Prism.Navigation;
 using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.Services
@@ -15,7 +17,7 @@ namespace DifferenzXamarinDemo.Services
         #endregion
 
         #region Private Properties
-
+        INavigationService _navigationService;
         static string _Token;
         static Xamarin.Auth.Account _fbaccount;
 
@@ -55,7 +57,9 @@ namespace DifferenzXamarinDemo.Services
 
             SettingsService.IsLoggedIn = false;
             SettingsService.LoggedInUserEmail = string.Empty;
-            await App.AppNavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
+            await App.AppNavigationService.NavigateAsync($"{nameof(LoginPage)}");
+
+            //await App.AppNavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
         }
 
         /// <summary>

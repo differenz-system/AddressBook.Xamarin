@@ -3,8 +3,10 @@ using System.Text.RegularExpressions;
 using DifferenzXamarinDemo.LanguageResources;
 using DifferenzXamarinDemo.Models;
 using DifferenzXamarinDemo.Services;
+using DifferenzXamarinDemo.Views;
 using Prism.Commands;
 using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace DifferenzXamarinDemo.ViewModels
 {
@@ -132,7 +134,8 @@ namespace DifferenzXamarinDemo.ViewModels
                 DatabaseService.SaveItem(userData);
                 await ClosePopup();
                 await DisplayAlertAsync(AppResources.TITLE_SUCCESS, SaveButtonText == AppResources.TEXT_SAVE ? AppResources.MESSAGE_SUCCESS_DATA_SAVE : AppResources.MESSAGE_SUCCESS_DATA_UPDATED, AppResources.TEXT_OK);
-                await _navigationService.GoBackAsync();
+                //await _navigationService.GoBackAsync();
+                await _navigationService.NavigateAsync($"{nameof(MyListPage)}");
             }
             else
             {
@@ -152,7 +155,8 @@ namespace DifferenzXamarinDemo.ViewModels
                     await ShowLoader(true);
                     DatabaseService.DeleteItem(Id);
                     await ClosePopup();
-                    await _navigationService.GoBackAsync();
+                    //await _navigationService.GoBackAsync();
+                    await _navigationService.NavigateAsync($"{nameof(MyListPage)}");
                 }
             }
             catch (Exception ex)
@@ -164,7 +168,8 @@ namespace DifferenzXamarinDemo.ViewModels
 
         async void Cancel()
         {
-            await _navigationService.GoBackAsync();
+           //await _navigationService.GoBackAsync();
+            await _navigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(MyListPage)}");
         }
         #endregion
 

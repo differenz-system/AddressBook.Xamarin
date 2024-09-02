@@ -1,4 +1,5 @@
 ﻿using DifferenzXamarinDemo.Services;
+using DifferenzXamarinDemo.ViewModels;
 using DifferenzXamarinDemo.Views;
 using Prism;
 using Prism.Ioc;
@@ -18,7 +19,7 @@ namespace DifferenzXamarinDemo
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
         public static INavigationService AppNavigationService { get; set; }
-
+      
         protected override void OnInitialized()
         {
             InitializeComponent();

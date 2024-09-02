@@ -170,7 +170,7 @@ namespace DifferenzXamarinDemo.ViewModels
             }
             catch (Exception ex)
             {
-
+                 TelemetryService.Instance.Record(ex);
             }
         }
         #endregion
